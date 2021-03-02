@@ -1,17 +1,26 @@
-import React, { FC } from "react";
-import { NormalButton } from "src/components/Button";
-import EmptyLayout from "src/components/Layout/EmptyLayout";
+import { FC } from "react";
+import { useRouter } from "next/dist/client/router";
 
-import Styled from "./style";
+import Style from "./style";
+import { UnderlineInput } from "@components/Input";
+import { NormalButton } from "@components/Button";
 
 const Home: FC = ({}) => {
+  const router = useRouter();
+
   return (
-    <EmptyLayout>
-      <Styled.ButtonBox>
-        <NormalButton>방 만들기</NormalButton>
+    <Style.HomeLayout>
+      <Style.Title>라이어 게임</Style.Title>
+      <Style.InputBox>
+        <UnderlineInput placeholder='이름 입력' maxLength={12} />
+      </Style.InputBox>
+      <Style.ButtonBox>
+        <NormalButton onClick={() => router.push("/room/create")}>
+          방 만들기
+        </NormalButton>
         <NormalButton>방 참여하기</NormalButton>
-      </Styled.ButtonBox>
-    </EmptyLayout>
+      </Style.ButtonBox>
+    </Style.HomeLayout>
   );
 };
 
