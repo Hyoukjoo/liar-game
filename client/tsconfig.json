@@ -16,7 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@common/*": ["src/common/*"],
-      "@src/*": ["src/*"]
+      "@components/*": ["src/components/*"],
+      "@views/*": ["src/views/*"],
+      "@utils/*": ["src/utils/*"],
+      "@hooks/*": ["src/hooks/*"]
     },
     "typeRoots": ["node_modules/@types", "./types"]
   },
