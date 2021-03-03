@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "cy:run": "cypress run --env configFile=dev",
     "cy:open": "cypress open",
     "storybook": "start-storybook -p 5000",
-    "icon": "npx @svgr/cli --config-file ./config/svgr/.svgrrc.js --out-dir ./src/components/Icon --ext tsx ./resource/svg && git restore ./src/components/Icon/index.tsx"
+    "icon": "npx @svgr/cli --config-file ./config/svgr/.svgrrc.js --out-dir ./src/components/Icon --ext tsx ./resource/svg"
   },
   "keywords": [],
   "author": "",
