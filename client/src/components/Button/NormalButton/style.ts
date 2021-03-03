@@ -15,17 +15,14 @@ namespace NormalButtonStyle {
   export const Button = styled.button<StyleProps>`
     font-family: inherit;
     font-size: ${({ size }) => ButtonSize[size]};
+    width: max-content;
     height: fit-content;
-    padding: 0.5rem 1rem;
+    padding: 10px 20px;
     border-radius: 5px;
     background-color: gray;
     &:active {
       opacity: 0.8;
     }
-  `;
-
-  export const ButtonLabel = styled.label`
-    font-size: 1rem;
   `;
 }
 

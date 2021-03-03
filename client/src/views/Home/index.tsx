@@ -18,7 +18,9 @@ const Home: FC = ({}) => {
         <NormalButton onClick={() => router.push("/room/create")}>
           방 만들기
         </NormalButton>
-        <NormalButton>방 참여하기</NormalButton>
+        <NormalButton onClick={() => router.push("/room/join")}>
+          방 참여하기
+        </NormalButton>
       </Style.ButtonBox>
     </Style.HomeLayout>
   );
