@@ -2,9 +2,10 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import { createConnection } from "typeorm";
+import "reflect-metadata";
 
 import createSocketIO from "./socket";
-import { playRouter, roomRouter, userRouter } from "./routes";
+import router from "./routes";
 
 createConnection()
   .then((connection) => {
@@ -20,9 +21,7 @@ const server = http.createServer(app);
 app.use(express.json());
 app.use(cors({ origin: "*" }));
 
-app.use("/api/users", userRouter);
-app.use("/api/plays", playRouter);
-app.use("/api/rooms", roomRouter);
+app.use("/", router);
 
 createSocketIO(server);
 
