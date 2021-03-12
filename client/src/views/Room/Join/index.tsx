@@ -1,36 +1,100 @@
-import { FC } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 
 import Style from "./style";
 import RoomItem from "../components/RoomItem";
 import { NavLayout } from "@components/Layout";
 import { UnderlineInput } from "@components/Input";
-import { IconButton, NormalButton } from "@components/Button";
+import { IconButton, BaseButton } from "@components/Button";
 import { Refresh } from "@components/Icon";
+import useSocket from "@hooks/useSocket";
+import { getRoomList, findRooms, joinRoom } from "@services/Room/remotes";
+import RoomModel from "src/models/RoomModel";
 
 const RoomJoinView: FC = ({}) => {
   const router = useRouter();
+  const { socket, roomSocket } = useSocket();
+
+  const [searchValue, setSearchValue] = useState("");
+  const [rooms, setRooms] = useState<RoomModel[]>();
+  const [selectedRoomId, setSelectedRoomId] = useState<string>();
+
+  useEffect(() => {
+    getRoomList().then((results) => {
+      const roomModels = RoomModel.createFromApi(results);
+      setRooms(roomModels);
+    });
+  }, []);
+
+  const onClickSearchButton = async () => {
+    if (searchValue.trim().length < 1) return;
+    const result = await findRooms(searchValue);
+
+    const roomModels = RoomModel.createFromApi(result);
+
+    setRooms(roomModels);
+  };
+
+  const onClickRoomItem = (roomId: string) => {
+    setSelectedRoomId(roomId);
+  };
+
+  const onClickInitButton = async () => {
+    setSearchValue("");
+    setRooms(null);
+    setSelectedRoomId(null);
+    const result = await getRoomList();
+    const roomModels = RoomModel.createFromApi(result);
+    setRooms(roomModels);
+  };
+
+  const onClickJoinButton = async () => {
+    const userId = Number(router.query.userId);
+    const result = await joinRoom({ userId, roomId: selectedRoomId });
+
+    router.push({
+      pathname: `/game/bench`,
+      query: {
+        roomId: selectedRoomId,
+        userId: userId,
+      },
+    });
+  };
+
+  const RoomItems = useCallback(
+    () => (
+      <Style.Ul>
+        {rooms?.map((room) => (
+          <RoomItem
+            key={room.id}
+            roomName={room.name}
+            ownerName={room.owner.name}
+            onClick={() => onClickRoomItem(room.id)}
+            isSelected={selectedRoomId === room.id}
+          />
+        ))}
+      </Style.Ul>
+    ),
+    [rooms, selectedRoomId, searchValue]
+  );
 
   return (
     <NavLayout title='방 참여하기'>
       <Style.Container>
         <Style.SearchBox>
-          <UnderlineInput placeholder='방 찾기' />
-          <NormalButton>검색</NormalButton>
+          <UnderlineInput
+            placeholder='방 찾기'
+            value={searchValue}
+            onChange={(e) => {
+              setSearchValue(e.target.value);
+            }}
+          />
+          <BaseButton onClick={onClickSearchButton}>검색</BaseButton>
         </Style.SearchBox>
-        <Style.Ul>
-          <RoomItem roomName={"test"} ownerName='tester' isPrivate />
-          <RoomItem roomName={"test"} ownerName='tester' isPrivate />
-          <RoomItem roomName={"test"} ownerName='tester' isSelected />
-          <RoomItem roomName={"test"} ownerName='tester' isPrivate />
-          <RoomItem roomName={"test"} ownerName='tester' isPrivate />
-          <RoomItem roomName={"test"} ownerName='tester' isPrivate isSelected />
-        </Style.Ul>
+        <RoomItems />
         <Style.Bottom>
-          <NormalButton onClick={() => router.push("/room/bench")}>
-            참여하기
-          </NormalButton>
-          <IconButton Svg={Refresh} />
+          <BaseButton onClick={onClickJoinButton}>참여하기</BaseButton>
+          <IconButton onClick={onClickInitButton} Svg={Refresh} />
         </Style.Bottom>
       </Style.Container>
     </NavLayout>

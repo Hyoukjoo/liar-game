@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Title } from "@components/Heading";
 
-namespace RoomBenchViewStyle {
+namespace GameBenchViewStyle {
   export const Container = styled.div`
     display: grid;
     align-content: center;
@@ -29,4 +29,4 @@ namespace RoomBenchViewStyle {
   `;
 }
 
-export default RoomBenchViewStyle;
+export default GameBenchViewStyle;

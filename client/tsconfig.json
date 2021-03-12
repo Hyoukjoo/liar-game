@@ -19,7 +19,8 @@
       "@components/*": ["src/components/*"],
       "@views/*": ["src/views/*"],
       "@utils/*": ["src/utils/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@hooks/*": ["src/hooks/*"],
+      "@services/*": ["src/services/*"]
     },
     "typeRoots": ["node_modules/@types", "./types"]
   },

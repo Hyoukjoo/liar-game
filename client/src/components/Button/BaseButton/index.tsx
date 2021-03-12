@@ -7,7 +7,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: Size;
 }
 
-const NormalButton: FC<Props> = ({ size = Size.SMALL, children, ...props }) => {
+const BaseButton: FC<Props> = ({ size = Size.SMALL, children, ...props }) => {
   return (
     <Styled.Button size={size} {...props}>
       {children}
@@ -15,4 +15,4 @@ const NormalButton: FC<Props> = ({ size = Size.SMALL, children, ...props }) => {
   );
 };
 
-export default NormalButton;
+export default BaseButton;

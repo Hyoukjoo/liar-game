@@ -11,7 +11,7 @@ const ButtonSize = {
   [Size.LARGE]: "2rem",
 };
 
-namespace NormalButtonStyle {
+namespace BaseButtonStyle {
   export const Button = styled.button<StyleProps>`
     font-family: inherit;
     font-size: ${({ size }) => ButtonSize[size]};
@@ -26,4 +26,4 @@ namespace NormalButtonStyle {
   `;
 }
 
-export default NormalButtonStyle;
+export default BaseButtonStyle;
