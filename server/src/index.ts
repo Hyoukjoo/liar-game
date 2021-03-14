@@ -1,11 +1,12 @@
 import express from "express";
 import http from "http";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import { createConnection } from "typeorm";
 import "reflect-metadata";
 
 import createSocketIO from "./socket";
-import router from "./routes";
+import routes from "./routes";
 
 createConnection()
   .then((connection) => {
@@ -18,10 +19,11 @@ createConnection()
 const app = express();
 const server = http.createServer(app);
 
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(cookieParser());
 
-app.use("/", router);
+app.use("/api", routes);
 
 createSocketIO(server);
 
