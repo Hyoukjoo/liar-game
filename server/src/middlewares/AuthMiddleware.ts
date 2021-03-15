@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import Token from "../utils/token";
 
 class AuthMiddleWare {
-  static checkToken(req: Request, res: Response, next: NextFunction) {
+  static verifyAuthToken(req: Request, res: Response, next: NextFunction) {
     try {
       const token = req.cookies["AUTH_TOKEN"];
 
