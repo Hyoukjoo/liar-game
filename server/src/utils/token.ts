@@ -16,7 +16,7 @@ class Token {
     payload.iss = "system";
 
     const token = jwt.sign(payload, process.env.JSON_WEB_TOKEN_SECRET_KEY, {
-      expiresIn: 5,
+      expiresIn: "7d",
     });
 
     return token;
