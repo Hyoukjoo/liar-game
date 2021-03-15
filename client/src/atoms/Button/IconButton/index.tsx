@@ -1,8 +1,8 @@
 import { ButtonHTMLAttributes, ComponentType, FC } from "react";
 
 import Style from "./style";
-import Icon from "@components/Icon/Component";
-import { SvgProps } from "@components/Icon/Component";
+import Icon from "@atoms/Icon/Component";
+import { SvgProps } from "@atoms/Icon/Component";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   Svg: ComponentType<SvgProps>;

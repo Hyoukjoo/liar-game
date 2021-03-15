@@ -2,9 +2,9 @@ import { FC } from "react";
 import { useRouter } from "next/dist/client/router";
 
 import Style from "./style";
-import { Title } from "@components/Heading";
-import { IconButton } from "@components/Button";
-import { LeftArrow } from "@components/Icon";
+import { Title } from "@atoms/Heading";
+import { IconButton } from "@atoms/Button";
+import { LeftArrow } from "@atoms/Icon";
 
 interface Props {
   title: string;

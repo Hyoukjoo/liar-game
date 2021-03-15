@@ -1,7 +1,7 @@
 import BaseSelect from ".";
 
 export default {
-  title: "Basic/Select",
+  title: "Atom/Select",
 };
 
 export const Base = () => {

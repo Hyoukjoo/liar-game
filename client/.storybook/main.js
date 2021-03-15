@@ -21,7 +21,9 @@ module.exports = {
 
     config.resolve.alias["@src"] = path.resolve("src/");
     config.resolve.alias["@common"] = path.resolve("src/common/");
-    config.resolve.alias["@components"] = path.resolve("src/components/");
+    config.resolve.alias["@atoms"] = path.resolve("src/atoms/");
+    config.resolve.alias["@molecules"] = path.resolve("src/molecules/");
+    config.resolve.alias["@organisms"] = path.resolve("src/organisms/");
     config.resolve.alias["@emotion/styled"] = path.resolve(
       "node_modules/@emotion/styled"
     );
