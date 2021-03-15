@@ -1,0 +1,7 @@
+extension: [ts]
+package: ./package.json
+ui: bdd
+spec: [test/**/*.spec.ts]
+timeout: 2000
+require: [ts-node/register]
+# parallel: true
