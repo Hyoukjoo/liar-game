@@ -67,6 +67,38 @@ export default class AuthController {
     }
   }
 
+  static async logout(req: Request, res: Response) {
+    try {
+      res.clearCookie("AUTH_TOKEN");
+      res.status(200).send(true);
+    } catch (e) {
+      console.error(e);
+
+      res.status(500).end();
+    }
+  }
+
+  static async withdraw(req: Request, res: Response) {
+    try {
+      const { userId } = req.params;
+      const result = await User.createQueryBuilder()
+        .delete()
+        .whereInIds(userId)
+        .execute();
+
+      if (result.affected > 0) {
+        res.clearCookie("AUTH_TOKEN");
+        res.status(200).json({ data: true });
+      } else {
+        res.status(400).json({ data: false });
+      }
+    } catch (e) {
+      console.error(e);
+
+      res.status(500).json({ data: false });
+    }
+  }
+
   static async getMyInfo(req: Request, res: Response) {
     try {
       const { user } = res.locals;
@@ -75,17 +107,6 @@ export default class AuthController {
       delete result.password;
 
       res.status(200).json(result);
-    } catch (e) {
-      console.error(e);
-
-      res.status(500).end();
-    }
-  }
-
-  static async logout(req: Request, res: Response) {
-    try {
-      res.clearCookie("AUTH_TOKEN");
-      res.status(200).send(true);
     } catch (e) {
       console.error(e);
 
