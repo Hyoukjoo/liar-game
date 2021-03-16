@@ -13,3 +13,8 @@
 1. liar-game > cd client
 2. liar-game/client > npm i
 3. liar-game/client > npm run dev
+
+##### 스토리북
+
+1. 위 client 과정을 진행 한 후
+2. liar-game/client > npm run storybook
