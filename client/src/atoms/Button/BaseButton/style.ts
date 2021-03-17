@@ -1,27 +1,37 @@
 import { Size } from "@common/enums/size";
+import { getBlackOpacity, getWhiteOpacity } from "@common/styles/opacity";
+import { getGlassMorphismStyle } from "@common/styles/glassmorphism";
 import styled from "@emotion/styled";
+import { ButtonSize } from "../_constant/ButtonSize";
 
 interface StyleProps {
   size: Size;
 }
 
-const ButtonSize = {
-  [Size.SMALL]: "1rem",
-  [Size.MEDIUM]: "1.5rem",
-  [Size.LARGE]: "2rem",
-};
-
 namespace BaseButtonStyle {
   export const Button = styled.button<StyleProps>`
-    font-family: inherit;
-    font-size: ${({ size }) => ButtonSize[size]};
+    ${getGlassMorphismStyle};
+
+    padding: 10px 20px 14px;
     width: max-content;
-    height: fit-content;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: gray;
+    height: ${({ size }) => ButtonSize[size].height};
+
+    font-family: NotoSans;
+    font-size: ${({ size }) => ButtonSize[size].fontSize};
+    line-height: ${({ size }) => ButtonSize[size].fontSize};
+
+    border-radius: 100px;
+    transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    cursor: pointer;
+
+    &:hover {
+      background: ${getWhiteOpacity(10)};
+      box-shadow: 4px 4px 20px 1px ${getBlackOpacity(20)};
+    }
+
     &:active {
-      opacity: 0.8;
+      box-shadow: inset 4px 4px 20px 0px ${getBlackOpacity(20)};
     }
   `;
 }
