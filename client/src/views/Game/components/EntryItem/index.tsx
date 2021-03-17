@@ -1,5 +1,5 @@
-import Icon from "@components/Icon/Component";
-import { Crown } from "@components/Icon";
+import Icon from "@atoms/Icon/Component";
+import { Crown } from "@atoms/Icon";
 import { FC } from "react";
 
 import Style from "./style";

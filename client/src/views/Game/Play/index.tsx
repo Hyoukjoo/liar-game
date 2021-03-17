@@ -2,10 +2,10 @@ import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 
 import Style from "./style";
-import { NavLayout } from "@components/Layout";
+import { NavLayout } from "@molecules/Layout";
 import { deleteGame, getGame } from "@services/Game/GameRemotes";
 import GameModel from "src/models/GameModel";
-import { Title } from "@components/Heading";
+import { Title } from "@atoms/Heading";
 
 const PlayView: FC = ({}) => {
   const router = useRouter();

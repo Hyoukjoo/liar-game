@@ -2,13 +2,13 @@ import { ChangeEvent, FC, useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 
 import Style from "./style";
-import { NavLayout } from "@components/Layout";
-import { BaseButton } from "@components/Button";
+import { NavLayout } from "@molecules/Layout";
+import { BaseButton } from "@atoms/Button";
 import EntryItem from "@views/Game/components/EntryItem";
 import UserModel from "src/models/UserModel";
 import { getRoom, leaveRoom } from "@services/Room/remotes";
 import RoomModel from "src/models/RoomModel";
-import { Title } from "@components/Heading";
+import { Title } from "@atoms/Heading";
 import { createGame } from "@services/Game/GameRemotes";
 
 const GameBenchView: FC = ({}) => {
@@ -58,7 +58,7 @@ const GameBenchView: FC = ({}) => {
         {member?.map((user) => (
           <EntryItem
             key={`${user.id}-${roomId}`}
-            entryName={user.name}
+            entryName={user.nickname}
             isOwner={room.owner.id === user.id}
           />
         ))}

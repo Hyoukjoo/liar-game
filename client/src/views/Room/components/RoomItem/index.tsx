@@ -1,8 +1,8 @@
 import { FC, LiHTMLAttributes } from "react";
 
 import Style from "./style";
-import Icon from "@components/Icon/Component";
-import { Lock } from "@components/Icon";
+import Icon from "@atoms/Icon/Component";
+import { Lock } from "@atoms/Icon";
 
 interface Props extends LiHTMLAttributes<HTMLLIElement> {
   roomName: string;

@@ -3,10 +3,10 @@ import { useRouter } from "next/dist/client/router";
 
 import Style from "./style";
 import RoomItem from "../components/RoomItem";
-import { NavLayout } from "@components/Layout";
-import { UnderlineInput } from "@components/Input";
-import { IconButton, BaseButton } from "@components/Button";
-import { Refresh } from "@components/Icon";
+import { NavLayout } from "@molecules/Layout";
+import { TextInput } from "@atoms/Input";
+import { IconButton, BaseButton } from "@atoms/Button";
+import { Refresh } from "@atoms/Icon";
 import useSocket from "@hooks/useSocket";
 import { getRoomList, findRooms, joinRoom } from "@services/Room/remotes";
 import RoomModel from "src/models/RoomModel";
@@ -68,7 +68,7 @@ const RoomJoinView: FC = ({}) => {
           <RoomItem
             key={room.id}
             roomName={room.name}
-            ownerName={room.owner.name}
+            ownerName={room.owner.nickname}
             onClick={() => onClickRoomItem(room.id)}
             isSelected={selectedRoomId === room.id}
           />
@@ -82,7 +82,7 @@ const RoomJoinView: FC = ({}) => {
     <NavLayout title='방 참여하기'>
       <Style.Container>
         <Style.SearchBox>
-          <UnderlineInput
+          <TextInput
             placeholder='방 찾기'
             value={searchValue}
             onChange={(e) => {

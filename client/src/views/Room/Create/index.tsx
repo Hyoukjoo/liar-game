@@ -2,13 +2,12 @@ import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 
 import Style from "./style";
-import { NavLayout } from "@components/Layout";
-import { UnderlineInput } from "@components/Input";
-import { BaseButton } from "@components/Button";
+import { NavLayout } from "@molecules/Layout";
+import { TextInput } from "@atoms/Input";
+import { BaseButton } from "@atoms/Button";
 import { Size } from "@common/enums/size";
 import useSocket from "@hooks/useSocket";
 import { createRoom } from "@services/Room/remotes";
-import { deleteUser } from "@services/User/remotes";
 
 const RoomCreateView: FC = ({}) => {
   const router = useRouter();
@@ -40,8 +39,6 @@ const RoomCreateView: FC = ({}) => {
   };
 
   const onClickBackIcon = async () => {
-    const result = await deleteUser(userId);
-
     router.back();
   };
 
@@ -49,7 +46,7 @@ const RoomCreateView: FC = ({}) => {
     <NavLayout title='방 만들기' onClickBackIcon={onClickBackIcon}>
       <Style.Container>
         <Style.InputBox>
-          <UnderlineInput
+          <TextInput
             placeholder='방 이름'
             maxLength={12}
             onChange={(e) => setRoomName(e.target.value)}
