@@ -1,16 +1,19 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment, useMemo } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { Global, Theme, ThemeProvider } from "@emotion/react";
 
 import GlobalStyles from "@common/styles/globalStyle";
 import FontStyles from "@common/styles/fontStyle";
+import useClient from "@hooks/useClient";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
+  const { clientHeight } = useClient();
+  const vh100 = useMemo(() => (clientHeight ? clientHeight + "px" : "100vh"), [
+    clientHeight,
+  ]);
   const theme: Theme = {
-    color: {
-      black: "#000",
-    },
+    client: { vh100 },
   };
 
   return (
@@ -19,6 +22,8 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <title>liar game</title>
         <meta name='title' content='liar game' />
         <meta name='description' content='game with friends' />
+
+        <meta name='viewport' content='initial-scale=1, viewport-fit=cover' />
 
         <meta name='og:type' content='website' />
         <meta name='og:url' content='http://localhost:3000' />
