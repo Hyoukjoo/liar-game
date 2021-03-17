@@ -1,16 +1,15 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 
 const BASE_API_URL = process.env.BASE_API_URL;
-const url = new URL(BASE_API_URL);
 
 export default class BaseApiService {
   private client: AxiosInstance;
 
   constructor(path: string) {
-    url.pathname = `api/${path}`;
+    const url = new URL(`api/${path}`, BASE_API_URL);
 
     this.client = axios.create({
-      baseURL: url.toString(),
+      baseURL: url.href,
       paramsSerializer: function (params) {
         return new URLSearchParams(params).toString();
       },
