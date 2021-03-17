@@ -1,6 +1,7 @@
 export default interface UserDto {
   id: number;
-  name: string;
+  email: string;
+  nickname: string;
   createdAt: string;
   updatedAt: string;
 }
