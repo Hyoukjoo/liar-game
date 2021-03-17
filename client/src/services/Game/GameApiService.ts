@@ -1,6 +1,6 @@
 import BaseApiService from "@services/BaseApiService";
 import GameDto from "./dto/GameDto";
-import { CreateGameBody } from "./RequestBodyType";
+import { CreateGameBody } from "./RequestBody";
 
 class GameApiService extends BaseApiService {
   async getGame(gameId: number) {
