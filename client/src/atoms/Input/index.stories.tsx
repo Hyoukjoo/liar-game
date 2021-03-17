@@ -1,31 +1,24 @@
 import { FC } from "react";
 
-import { yellow } from "@common/styles/color";
-import styled from "@emotion/styled";
+import Story from "@common/styles/storybook";
 import { BaseInput, TextInput } from ".";
 
 export default {
   title: "Atom/Input",
 };
 
-const Layout = styled.div`
-  padding: 1rem;
-  height: 100vh;
-  background-color: ${yellow};
-`;
-
-export const Base_Input: FC = () => {
+export const Base: FC = () => {
   return (
-    <Layout>
+    <Story.GlassLayout>
       <BaseInput />
-    </Layout>
+    </Story.GlassLayout>
   );
 };
 
-export const Text_Input: FC = () => {
+export const Text: FC = () => {
   return (
-    <Layout>
+    <Story.GlassLayout>
       <TextInput />
-    </Layout>
+    </Story.GlassLayout>
   );
 };
