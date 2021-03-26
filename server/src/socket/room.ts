@@ -1,4 +1,4 @@
-import { Server, Socket, Namespace } from "socket.io";
+import { Server, Socket, Namespace } from 'socket.io';
 
 interface Room {
   id: string;
@@ -17,22 +17,18 @@ const rooms = new Map<string, Room>();
 const roomMember = new Map<string, RoomMember[]>();
 
 const runRoomSocket = (io: Server) => {
-  const ns = io.of("socket.room");
+  const ns = io.of('socket.room');
 
-  ns.on("connection", (socket: Socket) => {
-    console.log("ns connection", socket.id);
+  ns.on('connection', (socket: Socket) => {
+    console.log('ns connection', socket.id);
     createRoom(socket, ns);
     joinRoom(socket);
     leaveRoom(socket);
   });
-
-  ns.on("disconnect", () => {
-    console.log("room ns disconnected");
-  });
 };
 
 const createRoom = (socket: Socket, ns: Namespace) => {
-  socket.on("createRoom", (data) => {
+  socket.on('createRoom', (data) => {
     const { userName, roomName } = data;
     const createdAt = new Date();
     const time = createdAt.getTime();
@@ -51,18 +47,18 @@ const createRoom = (socket: Socket, ns: Namespace) => {
     console.log(roomMember.entries());
 
     socket.join(roomId);
-    ns.to(roomId).emit("successCreateRoom", rooms.get(roomId));
+    ns.to(roomId).emit('successCreateRoom', rooms.get(roomId));
   });
 };
 
 const joinRoom = (socket: Socket) => {
-  socket.on("joinRoom", (data) => {
+  socket.on('joinRoom', (data) => {
     socket.join(data.roomId);
   });
 };
 
 const leaveRoom = (socket: Socket) => {
-  socket.on("leaveRoom", (data) => {
+  socket.on('leaveRoom', (data) => {
     const member = roomMember
       .get(data.roomId)
       .filter((m) => m.userName !== data.userName);
