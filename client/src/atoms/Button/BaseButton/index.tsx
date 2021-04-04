@@ -1,15 +1,20 @@
-import { Size } from "@common/enums/size";
-import React, { ButtonHTMLAttributes, FC } from "react";
+import { Size } from '@common/enums/size';
+import React, { ButtonHTMLAttributes, FC } from 'react';
 
-import Styled from "./style";
+import Styled from './style';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: Size;
 }
 
-const BaseButton: FC<Props> = ({ size = Size.MEDIUM, children, ...props }) => {
+const BaseButton: FC<Props> = ({
+  size = Size.MEDIUM,
+  type = 'button',
+  children,
+  ...props
+}) => {
   return (
-    <Styled.Button size={size} {...props}>
+    <Styled.Button size={size} type={type} {...props}>
       {children}
     </Styled.Button>
   );
