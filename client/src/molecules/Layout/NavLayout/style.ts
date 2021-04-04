@@ -1,23 +1,23 @@
-import { FullHeightExceptNav, NavHeight } from "@common/styles/height";
-import styled from "@emotion/styled";
-import { BaseLayout } from "..";
+import { white } from '@common/styles/color';
+import { FullHeightExceptNav, NavHeight } from '@common/styles/height';
+import { getWhiteOpacity } from '@common/styles/opacity';
+import styled from '@emotion/styled';
+import { BaseLayout } from '..';
 
 namespace NavLayoutStyle {
   export const Layout = styled(BaseLayout)``;
 
   export const Nav = styled.nav`
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     justify-content: center;
-    justify-items: center;
     align-items: center;
     width: 100%;
     height: ${NavHeight};
-    border-bottom: 1px solid gray;
-    background-color: #fff;
+    background-color: transparent;
   `;
 
   export const NavLeftSide = styled.div`
@@ -29,8 +29,13 @@ namespace NavLayoutStyle {
   `;
 
   export const Body = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
     width: 100%;
-    height: ${FullHeightExceptNav};
+    height: 100%;
   `;
 }
 
