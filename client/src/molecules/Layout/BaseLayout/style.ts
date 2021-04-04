@@ -1,16 +1,17 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 import {
   background1,
   background2,
   background3,
   white,
-} from "@common/styles/color";
-import { BaseDiv } from "@atoms/Div";
+} from '@common/styles/color';
+import { BaseDiv } from '@atoms/Div';
 
 namespace BaseLayoutStyles {
   export const Layout = styled(BaseDiv)`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -23,13 +24,6 @@ namespace BaseLayoutStyles {
       radial-gradient(at bottom left, ${background3}, transparent);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-  `;
-
-  export const Body = styled(BaseDiv)`
-    padding: 0 30px;
-    width: 100vw;
-    min-width: 320px;
-    max-width: 375px;
   `;
 }
 
