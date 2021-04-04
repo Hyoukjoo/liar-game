@@ -19,6 +19,7 @@
       "@atoms/*": ["src/atoms/*"],
       "@molecules/*": ["src/molecules/*"],
       "@organisms/*": ["src/organisms/*"],
+      "@templates/*": ["src/templates/*"],
       "@views/*": ["src/views/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"],
