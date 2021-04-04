@@ -1,15 +1,16 @@
-import { useMemo } from "react";
-import { configure, addDecorator, addParameters } from "@storybook/react";
-import { withKnobs } from "@storybook/addon-knobs";
-import { Global, Theme, ThemeProvider } from "@emotion/react";
+import { useMemo } from 'react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
+import { Global, Theme, ThemeProvider } from '@emotion/react';
+import Style from '../src/common/styles/storybook';
 
-import FontStyle from "../src/common/styles/fontStyle";
-import GlobalStyle from "../src/common/styles/globalStyle";
-import useClient from "../src/hooks/useClient";
+import FontStyle from '../src/common/styles/fontStyle';
+import GlobalStyle from '../src/common/styles/globalStyle';
+import useClient from '../src/hooks/useClient';
 
 const withThemeProvider = (story) => {
   const { clientHeight } = useClient();
-  const vh100 = useMemo(() => (clientHeight ? clientHeight + "px" : "100vh"), [
+  const vh100 = useMemo(() => (clientHeight ? clientHeight + 'px' : '100vh'), [
     clientHeight,
   ]);
 
@@ -21,7 +22,7 @@ const withThemeProvider = (story) => {
     <ThemeProvider theme={theme}>
       <Global styles={GlobalStyle} />
       <Global styles={FontStyle} />
-      {story()}
+      <Style.GlassLayout>{story()}</Style.GlassLayout>
     </ThemeProvider>
   );
 };
@@ -38,4 +39,4 @@ addParameters({
   },
 });
 
-configure(require.context("../src", true, /\.stories\.tsx?$/), module);
+configure(require.context('../src', true, /\.stories\.tsx?$/), module);
