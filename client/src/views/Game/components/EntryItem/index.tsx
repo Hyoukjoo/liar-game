@@ -1,8 +1,9 @@
-import Icon from "@atoms/Icon/Component";
-import { Crown } from "@atoms/Icon";
-import { FC } from "react";
+import Icon from '@atoms/Icon/Component';
+import { Crown } from '@atoms/Icon';
+import { FC } from 'react';
 
-import Style from "./style";
+import Style from './style';
+import { yellow } from '@common/styles/color';
 
 interface Props {
   entryName: string;
@@ -16,7 +17,7 @@ const EntryItem: FC<Props> = ({ entryName, isOwner, ...props }) => {
         <Style.NameBox>
           <Style.EntryName>{entryName}</Style.EntryName>
           <Style.IconWrapper>
-            {isOwner && <Icon Svg={Crown} color='#fff600' />}
+            {isOwner && <Icon Svg={Crown} color={yellow} />}
           </Style.IconWrapper>
         </Style.NameBox>
       </Style.Inner>
