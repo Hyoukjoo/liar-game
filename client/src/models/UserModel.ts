@@ -1,4 +1,5 @@
-import UserDto from 'src/services/User/dto/UserDto';
+import UserDto from '@services/User/dto/UserDto';
+
 export default class UserModel {
   id: number;
   email: string;

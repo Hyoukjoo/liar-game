@@ -1,4 +1,4 @@
-import RoomDto from 'src/services/Room/dto/RoomDto';
+import RoomDto from '@services/Room/dto/RoomDto';
 import UserModel from './UserModel';
 
 export default class RoomModel {

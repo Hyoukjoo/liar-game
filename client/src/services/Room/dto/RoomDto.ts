@@ -1,4 +1,4 @@
-import UserDto from 'src/services/User/dto/UserDto';
+import UserDto from '@services/User/dto/UserDto';
 
 export default interface RoomDto {
   id: string;

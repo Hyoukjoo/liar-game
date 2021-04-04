@@ -10,7 +10,7 @@
     "cy:run": "cypress run --env configFile=dev",
     "cy:open": "cypress open",
     "storybook": "start-storybook -s public -p 5000",
-    "icon": "npx @svgr/cli --config-file ./config/svgr/.svgrrc.js --out-dir ./src/components/Icon --ext tsx ./resource/svg"
+    "icon": "npx @svgr/cli --config-file ./config/svgr/.svgrrc.js --out-dir ./src/components/atoms/Icon --ext tsx ./resource/svg"
   },
   "keywords": [],
   "author": "",
