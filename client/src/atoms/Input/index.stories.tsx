@@ -1,24 +1,15 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import Story from "@common/styles/storybook";
-import { BaseInput, TextInput } from ".";
+import { BaseInput, TextInput } from '.';
 
 export default {
-  title: "Atom/Input",
+  title: 'Atom/Input',
 };
 
 export const Base: FC = () => {
-  return (
-    <Story.GlassLayout>
-      <BaseInput />
-    </Story.GlassLayout>
-  );
+  return <BaseInput />;
 };
 
 export const Text: FC = () => {
-  return (
-    <Story.GlassLayout>
-      <TextInput />
-    </Story.GlassLayout>
-  );
+  return <TextInput />;
 };
