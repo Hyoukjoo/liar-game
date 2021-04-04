@@ -1,8 +1,8 @@
-import { Size } from "@common/enums/size";
-import { getBlackOpacity, getWhiteOpacity } from "@common/styles/opacity";
-import { getGlassMorphismStyle } from "@common/styles/glassmorphism";
-import styled from "@emotion/styled";
-import { InputSize } from "../_constant/InputSize";
+import { Size } from '@common/enums/size';
+import { getBlackOpacity, getWhiteOpacity } from '@common/styles/opacity';
+import { getGlassMorphismStyle } from '@common/styles/glassmorphism';
+import styled from '@emotion/styled';
+import { InputSize } from '../_constant/InputSize';
 
 interface StyleProps {
   inputSize?: Size;
@@ -38,6 +38,14 @@ namespace BaseInputStyle {
     &::-webkit-input-placeholder {
       font-family: inherit;
       color: ${getWhiteOpacity(50)};
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      transition: background-color 50000s ease-in-out 0s;
+      -webkit-text-fill-color: #fff !important;
     }
   `;
 }
