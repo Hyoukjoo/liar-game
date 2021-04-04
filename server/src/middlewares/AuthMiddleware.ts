@@ -1,10 +1,10 @@
-import { Request, Response, NextFunction } from "express";
-import Token from "../utils/token";
+import { Request, Response, NextFunction } from 'express';
+import Token from '../utils/token';
 
 class AuthMiddleWare {
   static verifyAuthToken(req: Request, res: Response, next: NextFunction) {
     try {
-      const token = req.cookies["AUTH_TOKEN"];
+      const token = req.cookies['AUTH_TOKEN'];
 
       if (token === undefined) {
         res.status(400).end();
@@ -17,7 +17,7 @@ class AuthMiddleWare {
       if (decoded.isRemainedOneDay) {
         const newToken = Token.getToken({ userId });
 
-        res.cookie("AUTH_TOKEN", newToken, {
+        res.cookie('AUTH_TOKEN', newToken, {
           maxAge: 1000 * 60 * 60 * 24 * 7,
           httpOnly: true,
         });
@@ -27,11 +27,11 @@ class AuthMiddleWare {
 
       next();
     } catch (e) {
-      if (e.message === "jwt expired") {
+      if (e.message === 'jwt expired') {
         console.error(e.message);
 
         res.status(401).end();
-      } else if (e.message === "invalid token") {
+      } else if (e.message === 'invalid token') {
         console.error(e.message);
 
         res.status(401).end();

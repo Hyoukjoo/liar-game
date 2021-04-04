@@ -1,15 +1,15 @@
-import { getRepository, MigrationInterface, QueryRunner } from "typeorm";
-import Category from "../models/Category";
-import Keyword from "../models/Keyword";
-import { AnimalSeed } from "../seed/keyword/aniaml.seed";
-import { CapitalSeed } from "../seed/keyword/capital.seed";
-import { FruitSeed } from "../seed/keyword/fruit.seed";
+import { getRepository, MigrationInterface, QueryRunner } from 'typeorm';
+import Category from '../models/Category';
+import Keyword from '../models/Keyword';
+import { AnimalSeed } from '../seed/keyword/aniaml.seed';
+import { CapitalSeed } from '../seed/keyword/capital.seed';
+import { FruitSeed } from '../seed/keyword/fruit.seed';
 
 export class keyword1615440278408 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     const animalCategory = await queryRunner.manager.findOne<Category>(
       Category,
-      { where: { name: "동물" } }
+      { where: { name: '동물' } }
     );
 
     const animalKeyword = AnimalSeed.map((keyword) =>
@@ -17,7 +17,7 @@ export class keyword1615440278408 implements MigrationInterface {
     );
 
     const capitalCategory = await queryRunner.manager.findOne(Category, {
-      where: { name: "국가" },
+      where: { name: '국가' },
     });
 
     const capitalKeyword = CapitalSeed.map((seed) =>
@@ -25,7 +25,7 @@ export class keyword1615440278408 implements MigrationInterface {
     );
 
     const fruitCategory = await queryRunner.manager.findOne(Category, {
-      where: { name: "과일" },
+      where: { name: '과일' },
     });
 
     const fruitKeyword = FruitSeed.map((seed) =>

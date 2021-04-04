@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
-import bcrypt from "bcrypt";
+import { Request, Response } from 'express';
+import bcrypt from 'bcrypt';
 
-import User from "../models/User";
-import Token from "../utils/token";
+import User from '../models/User';
+import Token from '../utils/token';
 
 const SALT_ROUNDS = 10;
 
@@ -55,7 +55,7 @@ export default class AuthController {
       const token = Token.getToken({ userId: user.id as number });
       delete user.password;
 
-      res.cookie("AUTH_TOKEN", token, {
+      res.cookie('AUTH_TOKEN', token, {
         httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 * 7,
       });
@@ -69,7 +69,7 @@ export default class AuthController {
 
   static async logout(req: Request, res: Response) {
     try {
-      res.clearCookie("AUTH_TOKEN");
+      res.clearCookie('AUTH_TOKEN');
       res.status(200).send(true);
     } catch (e) {
       console.error(e);
@@ -87,7 +87,7 @@ export default class AuthController {
         .execute();
 
       if (result.affected > 0) {
-        res.clearCookie("AUTH_TOKEN");
+        res.clearCookie('AUTH_TOKEN');
         res.status(200).json({ data: true });
       } else {
         res.status(400).json({ data: false });

@@ -1,12 +1,12 @@
-import { Request, Response } from "express";
-import { Like } from "typeorm";
-import Room from "../models/Room";
-import User from "../models/User";
+import { Request, Response } from 'express';
+import { Like } from 'typeorm';
+import Room from '../models/Room';
+import User from '../models/User';
 
 export default class RoomController {
   async getRoomList(req: Request, res: Response) {
     try {
-      const result = await Room.find({ relations: ["owner", "member"] });
+      const result = await Room.find({ relations: ['owner', 'member'] });
 
       res.status(200).json(result);
     } catch (e) {
@@ -21,7 +21,7 @@ export default class RoomController {
       const { roomId } = req.params;
 
       const result = await Room.findOne(roomId, {
-        relations: ["owner", "member"],
+        relations: ['owner', 'member'],
       });
 
       res.json(result);
@@ -79,7 +79,7 @@ export default class RoomController {
 
       const result = await Room.find({
         where: [{ name: Like(`%${roomName}%`) }],
-        relations: ["owner"],
+        relations: ['owner'],
       });
 
       res.json(result);

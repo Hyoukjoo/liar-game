@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
-import Category from "../models/Category";
-import Game from "../models/Game";
-import Room from "../models/Room";
+import { Request, Response } from 'express';
+import Category from '../models/Category';
+import Game from '../models/Game';
+import Room from '../models/Room';
 
 export default class GameController {
   async getGame(req: Request, res: Response) {
@@ -10,11 +10,11 @@ export default class GameController {
 
       const result = await Game.findOne(gameId, {
         relations: [
-          "room",
-          "room.owner",
-          "room.member",
-          "category",
-          "category.keywords",
+          'room',
+          'room.owner',
+          'room.member',
+          'category',
+          'category.keywords',
         ],
       });
 

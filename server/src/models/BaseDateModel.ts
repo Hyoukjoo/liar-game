@@ -1,5 +1,5 @@
-import { CreateDateColumn, UpdateDateColumn } from "typeorm";
-import BaseModel from "./BaseModel";
+import { CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import BaseModel from './BaseModel';
 
 export default abstract class BaseDateModel extends BaseModel {
   @CreateDateColumn()

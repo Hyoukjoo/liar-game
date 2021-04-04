@@ -1,14 +1,14 @@
-import { Entity, JoinColumn, ManyToOne, OneToOne } from "typeorm";
-import BaseDateModel from "./BaseDateModel";
-import Category from "./Category";
-import Room from "./Room";
+import { Entity, JoinColumn, ManyToOne, OneToOne } from 'typeorm';
+import BaseDateModel from './BaseDateModel';
+import Category from './Category';
+import Room from './Room';
 
 interface Data {
   room: Room;
   category: Category;
 }
 
-@Entity({ name: "games" })
+@Entity({ name: 'games' })
 export default class Game extends BaseDateModel {
   static async createModel(data: Data) {
     const model = new Game();

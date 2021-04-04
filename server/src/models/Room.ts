@@ -8,14 +8,14 @@ import {
   BaseEntity,
   CreateDateColumn,
   UpdateDateColumn,
-} from "typeorm";
-import User from "./User";
+} from 'typeorm';
+import User from './User';
 
 interface Data {
   user: User;
   roomName: string;
 }
-@Entity({ name: "rooms" })
+@Entity({ name: 'rooms' })
 export default class Room extends BaseEntity {
   static createModel(data: Data) {
     const model = new Room();
@@ -24,7 +24,7 @@ export default class Room extends BaseEntity {
     return model;
   }
 
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
@@ -32,8 +32,8 @@ export default class Room extends BaseEntity {
 
   @OneToOne(() => User, (user) => user.id)
   @JoinColumn({
-    name: "owner",
-    referencedColumnName: "id",
+    name: 'owner',
+    referencedColumnName: 'id',
   })
   owner: User;
 

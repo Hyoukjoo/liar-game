@@ -1,5 +1,5 @@
-import jwt from "jsonwebtoken";
-import { config } from "dotenv";
+import jwt from 'jsonwebtoken';
+import { config } from 'dotenv';
 
 config();
 
@@ -13,10 +13,10 @@ interface TokenPayload {
 
 class Token {
   static getToken(payload: TokenPayload) {
-    payload.iss = "system";
+    payload.iss = 'system';
 
     const token = jwt.sign(payload, process.env.JSON_WEB_TOKEN_SECRET_KEY, {
-      expiresIn: "7d",
+      expiresIn: '7d',
     });
 
     return token;

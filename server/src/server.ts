@@ -1,10 +1,10 @@
-import http from "http";
-import { Express } from "express";
-import { Connection, createConnection } from "typeorm";
-import "reflect-metadata";
+import http from 'http';
+import { Express } from 'express';
+import { Connection, createConnection } from 'typeorm';
+import 'reflect-metadata';
 
-import app from "./app";
-import createSocketIO from "./socket";
+import app from './app';
+import createSocketIO from './socket';
 
 class Server {
   private server: http.Server;
@@ -20,12 +20,12 @@ class Server {
     createConnection()
       .then((connection) => {
         this.db = connection;
-        console.log("db connection!!!");
+        console.log('db connection!!!');
 
         createSocketIO(this.server);
 
         this.server.listen(4000, () => {
-          console.log("server run!");
+          console.log('server run!');
         });
       })
       .catch((err) => {
@@ -38,10 +38,10 @@ class Server {
       if (err) {
         console.error(err);
       } else {
-        console.log("server stop");
+        console.log('server stop');
 
         this.db.close().then(() => {
-          console.log("db close");
+          console.log('db close');
         });
       }
     });
