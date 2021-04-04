@@ -1,8 +1,9 @@
-import { ButtonHTMLAttributes, ComponentType, FC } from "react";
+import { ButtonHTMLAttributes, ComponentType, FC } from 'react';
 
-import Style from "./style";
-import Icon from "@atoms/Icon/Component";
-import { SvgProps } from "@atoms/Icon/Component";
+import Style from './style';
+import Icon from '@atoms/Icon/Component';
+import { SvgProps } from '@atoms/Icon/Component';
+import { white } from '@common/styles/color';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   Svg: ComponentType<SvgProps>;
@@ -13,9 +14,9 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const IconButton: FC<Props> = ({
   Svg,
-  width = "24px",
-  height = "24px",
-  color,
+  width = '24px',
+  height = '24px',
+  color = white,
   ...props
 }) => {
   return (

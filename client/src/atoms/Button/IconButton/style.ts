@@ -1,4 +1,5 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+import BaseButton from '../BaseButton';
 
 interface StyleProps {
   width?: string;
@@ -6,12 +7,14 @@ interface StyleProps {
 }
 
 namespace IconButtonStyle {
-  export const Button = styled.button<StyleProps>`
+  export const Button = styled(BaseButton)<StyleProps>`
     position: relative;
     width: ${(props) => `calc(${props.width} + 16px)`};
     height: ${(props) => `calc(${props.height} + 16px)`};
-    background-color: #edeef7;
-    border-radius: 5px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    outline: none;
 
     &:active {
       opacity: 0.5;
