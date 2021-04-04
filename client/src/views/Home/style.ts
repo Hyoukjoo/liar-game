@@ -1,6 +1,6 @@
-import { GlassDiv } from "@atoms/Div";
-import styled from "@emotion/styled";
-import { BaseLayout } from "@molecules/Layout";
+import { GlassDiv } from '@atoms/Div';
+import styled from '@emotion/styled';
+import { BaseLayout } from '@molecules/Layout';
 
 namespace HomeStyles {
   export const HomeLayout = styled(BaseLayout)`

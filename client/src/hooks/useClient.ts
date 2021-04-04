@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const useClient = () => {
   const [clientWitdh, setClientWitdh] = React.useState(0);
@@ -13,8 +13,8 @@ const useClient = () => {
       setClientHeight(window.innerHeight);
     };
 
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, []);
 
   return {

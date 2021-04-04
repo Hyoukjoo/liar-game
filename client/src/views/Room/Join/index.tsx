@@ -1,21 +1,21 @@
-import { FC, useCallback, useEffect, useState } from "react";
-import { useRouter } from "next/dist/client/router";
+import { FC, useCallback, useEffect, useState } from 'react';
+import { useRouter } from 'next/dist/client/router';
 
-import Style from "./style";
-import RoomItem from "../components/RoomItem";
-import { NavLayout } from "@molecules/Layout";
-import { TextInput } from "@atoms/Input";
-import { IconButton, BaseButton } from "@atoms/Button";
-import { Refresh } from "@atoms/Icon";
-import useSocket from "@hooks/useSocket";
-import { getRoomList, findRooms, joinRoom } from "@services/Room/remotes";
-import RoomModel from "src/models/RoomModel";
+import Style from './style';
+import RoomItem from '../components/RoomItem';
+import { NavLayout } from '@molecules/Layout';
+import { TextInput } from '@atoms/Input';
+import { IconButton, BaseButton } from '@atoms/Button';
+import { Refresh } from '@atoms/Icon';
+import useSocket from '@hooks/useSocket';
+import { getRoomList, findRooms, joinRoom } from '@services/Room/remotes';
+import RoomModel from 'src/models/RoomModel';
 
 const RoomJoinView: FC = ({}) => {
   const router = useRouter();
   const { socket, roomSocket } = useSocket();
 
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const [rooms, setRooms] = useState<RoomModel[]>();
   const [selectedRoomId, setSelectedRoomId] = useState<string>();
 
@@ -40,7 +40,7 @@ const RoomJoinView: FC = ({}) => {
   };
 
   const onClickInitButton = async () => {
-    setSearchValue("");
+    setSearchValue('');
     setRooms(null);
     setSelectedRoomId(null);
     const result = await getRoomList();

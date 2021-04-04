@@ -1,5 +1,5 @@
-import CategoryDto from "@services/Game/dto/CategoryDto";
-import KeywordModel from "./KeywordModel";
+import CategoryDto from '@services/Game/dto/CategoryDto';
+import KeywordModel from './KeywordModel';
 
 export default class CategoryModel {
   id: number;

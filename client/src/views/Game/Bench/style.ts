@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { Title } from "@atoms/Heading";
+import styled from '@emotion/styled';
+import { Title } from '@atoms/Heading';
 
 namespace GameBenchViewStyle {
   export const Container = styled.div`

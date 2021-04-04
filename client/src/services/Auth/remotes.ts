@@ -1,5 +1,5 @@
-import AuthApiService from "./AuthApiService";
-import { LoginBody, SignUpBody } from "./RequestBody";
+import AuthApiService from './AuthApiService';
+import { LoginBody, SignUpBody } from './RequestBody';
 
 export const signup = async (body: SignUpBody) => {
   try {

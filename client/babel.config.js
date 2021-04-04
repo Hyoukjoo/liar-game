@@ -1,14 +1,14 @@
 const presets = [
-  "next/babel",
+  'next/babel',
   [
-    "@emotion/babel-preset-css-prop",
+    '@emotion/babel-preset-css-prop',
     {
-      autoLabel: "dev-only",
-      labelFormat: "-[dirname]-[local]-",
+      autoLabel: 'dev-only',
+      labelFormat: '-[dirname]-[local]-',
     },
   ],
 ];
 
-const plugins = [["@babel/plugin-proposal-class-properties"]];
+const plugins = [['@babel/plugin-proposal-class-properties']];
 
 module.exports = { presets, plugins };

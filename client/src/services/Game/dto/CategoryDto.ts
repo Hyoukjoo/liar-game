@@ -1,4 +1,4 @@
-import KeywordDto from "./KeywordDto";
+import KeywordDto from './KeywordDto';
 
 export default interface CategoryDto {
   id: number;

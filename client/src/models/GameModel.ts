@@ -1,8 +1,8 @@
-import RoomModel from "./RoomModel";
-import CategoryModel from "./CategoryModel";
-import GameDto from "@services/Game/dto/GameDto";
-import UserModel from "./UserModel";
-import KeywordModel from "./KeywordModel";
+import RoomModel from './RoomModel';
+import CategoryModel from './CategoryModel';
+import GameDto from '@services/Game/dto/GameDto';
+import UserModel from './UserModel';
+import KeywordModel from './KeywordModel';
 
 export default class GameModel {
   id: number;

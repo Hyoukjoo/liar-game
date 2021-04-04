@@ -1,1 +1,1 @@
-import UserApiService from "@services/User/UserApiService";
+import UserApiService from '@services/User/UserApiService';

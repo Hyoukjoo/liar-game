@@ -12,11 +12,11 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const path = require("path");
-const fse = require("fs-extra");
+const path = require('path');
+const fse = require('fs-extra');
 
 function getConfigurationByFile(file) {
-  const pathToConfigFile = path.resolve("cypress", "config", `${file}.json`);
+  const pathToConfigFile = path.resolve('cypress', 'config', `${file}.json`);
   return fse.readJson(pathToConfigFile);
 }
 
@@ -24,6 +24,6 @@ function getConfigurationByFile(file) {
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-  const file = config.env.configFile || "dev";
+  const file = config.env.configFile || 'dev';
   return getConfigurationByFile(file);
 };

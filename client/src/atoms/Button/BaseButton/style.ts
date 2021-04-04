@@ -1,8 +1,8 @@
-import { Size } from "@common/enums/size";
-import { getBlackOpacity, getWhiteOpacity } from "@common/styles/opacity";
-import { getGlassMorphismStyle } from "@common/styles/glassmorphism";
-import styled from "@emotion/styled";
-import { ButtonSize } from "../_constant/ButtonSize";
+import { Size } from '@common/enums/size';
+import { getBlackOpacity, getWhiteOpacity } from '@common/styles/opacity';
+import { getGlassMorphismStyle } from '@common/styles/glassmorphism';
+import styled from '@emotion/styled';
+import { ButtonSize } from '../_constant/ButtonSize';
 
 interface StyleProps {
   size: Size;

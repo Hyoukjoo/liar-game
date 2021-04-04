@@ -1,7 +1,7 @@
-import BaseSelect from ".";
+import BaseSelect from '.';
 
 export default {
-  title: "Atom/Select",
+  title: 'Atom/Select',
 };
 
 export const Base = () => {

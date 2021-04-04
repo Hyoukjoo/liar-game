@@ -1,6 +1,6 @@
-import { FC, HTMLAttributes } from "react";
+import { FC, HTMLAttributes } from 'react';
 
-import Style from "./style";
+import Style from './style';
 
 export interface BaseDivProps extends HTMLAttributes<HTMLDivElement> {}
 

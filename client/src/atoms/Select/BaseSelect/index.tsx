@@ -1,6 +1,6 @@
-import { FC, SelectHTMLAttributes } from "react";
+import { FC, SelectHTMLAttributes } from 'react';
 
-import Style from "./style";
+import Style from './style';
 
 interface Props extends SelectHTMLAttributes<HTMLSelectElement> {}
 

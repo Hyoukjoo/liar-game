@@ -1,15 +1,15 @@
-import { ChangeEvent, FC, useCallback, useEffect, useState } from "react";
-import { useRouter } from "next/dist/client/router";
+import { ChangeEvent, FC, useCallback, useEffect, useState } from 'react';
+import { useRouter } from 'next/dist/client/router';
 
-import Style from "./style";
-import { NavLayout } from "@molecules/Layout";
-import { BaseButton } from "@atoms/Button";
-import EntryItem from "@views/Game/components/EntryItem";
-import UserModel from "src/models/UserModel";
-import { getRoom, leaveRoom } from "@services/Room/remotes";
-import RoomModel from "src/models/RoomModel";
-import { Title } from "@atoms/Heading";
-import { createGame } from "@services/Game/GameRemotes";
+import Style from './style';
+import { NavLayout } from '@molecules/Layout';
+import { BaseButton } from '@atoms/Button';
+import EntryItem from '@views/Game/components/EntryItem';
+import UserModel from 'src/models/UserModel';
+import { getRoom, leaveRoom } from '@services/Room/remotes';
+import RoomModel from 'src/models/RoomModel';
+import { Title } from '@atoms/Heading';
+import { createGame } from '@services/Game/GameRemotes';
 
 const GameBenchView: FC = ({}) => {
   const router = useRouter();
@@ -35,7 +35,7 @@ const GameBenchView: FC = ({}) => {
     });
 
     router.push({
-      pathname: "/game/play",
+      pathname: '/game/play',
       query: {
         gameId: result.id,
       },

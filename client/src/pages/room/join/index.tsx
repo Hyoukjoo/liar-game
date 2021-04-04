@@ -1,1 +1,1 @@
-export { default } from "@views/Room/Join";
+export { default } from '@views/Room/Join';

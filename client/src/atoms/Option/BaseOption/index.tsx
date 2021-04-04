@@ -1,6 +1,6 @@
-import { FC, OptionHTMLAttributes } from "react";
+import { FC, OptionHTMLAttributes } from 'react';
 
-import Style from "./style";
+import Style from './style';
 
 interface BaseOptionProps extends OptionHTMLAttributes<HTMLOptionElement> {}
 

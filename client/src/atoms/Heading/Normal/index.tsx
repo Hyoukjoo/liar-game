@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import { FC, HTMLAttributes } from "react";
+import styled from '@emotion/styled';
+import { FC, HTMLAttributes } from 'react';
 
-import Style from "./style";
+import Style from './style';
 
 interface Props extends HTMLAttributes<HTMLHeadingElement> {
   Title: any;

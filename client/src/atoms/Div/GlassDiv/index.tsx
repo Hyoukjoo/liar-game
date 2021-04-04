@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import { BaseDivProps } from "../BaseDiv";
-import Style from "./style";
+import { BaseDivProps } from '../BaseDiv';
+import Style from './style';
 
 export interface GlassDivProps extends BaseDivProps {}
 

@@ -1,10 +1,10 @@
-import BaseApiService from "../BaseApiService";
-import RoomDto from "./dto/RoomDto";
-import { CreateRoomBody, JoinRoomBody } from "./RequestBodyType";
+import BaseApiService from '../BaseApiService';
+import RoomDto from './dto/RoomDto';
+import { CreateRoomBody, JoinRoomBody } from './RequestBodyType';
 
 class RoomApiService extends BaseApiService {
   async getRoomList() {
-    return await this.get<RoomDto[]>("/");
+    return await this.get<RoomDto[]>('/');
   }
 
   async getRoom(roomId: string) {
@@ -12,7 +12,7 @@ class RoomApiService extends BaseApiService {
   }
 
   async createRoom(body: CreateRoomBody) {
-    return await this.post<RoomDto>("/", body);
+    return await this.post<RoomDto>('/', body);
   }
 
   async findRooms(roomName: string) {
@@ -20,7 +20,7 @@ class RoomApiService extends BaseApiService {
   }
 
   async joinRoom(body: JoinRoomBody) {
-    return await this.post("/join", body);
+    return await this.post('/join', body);
   }
 
   async leaveRoom(userId: number) {
@@ -28,4 +28,4 @@ class RoomApiService extends BaseApiService {
   }
 }
 
-export default new RoomApiService("rooms");
+export default new RoomApiService('rooms');

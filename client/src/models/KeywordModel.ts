@@ -1,4 +1,4 @@
-import KeywordDto from "@services/Game/dto/KeywordDto";
+import KeywordDto from '@services/Game/dto/KeywordDto';
 
 export default class KeywordModel {
   id: number;

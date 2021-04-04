@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 namespace EntryItemStyle {
   export const Item = styled.li`

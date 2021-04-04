@@ -1,13 +1,13 @@
-import { FC, useEffect, useState } from "react";
-import { useRouter } from "next/dist/client/router";
+import { FC, useEffect, useState } from 'react';
+import { useRouter } from 'next/dist/client/router';
 
-import Style from "./style";
-import { NavLayout } from "@molecules/Layout";
-import { TextInput } from "@atoms/Input";
-import { BaseButton } from "@atoms/Button";
-import { Size } from "@common/enums/size";
-import useSocket from "@hooks/useSocket";
-import { createRoom } from "@services/Room/remotes";
+import Style from './style';
+import { NavLayout } from '@molecules/Layout';
+import { TextInput } from '@atoms/Input';
+import { BaseButton } from '@atoms/Button';
+import { Size } from '@common/enums/size';
+import useSocket from '@hooks/useSocket';
+import { createRoom } from '@services/Room/remotes';
 
 const RoomCreateView: FC = ({}) => {
   const router = useRouter();
@@ -15,10 +15,10 @@ const RoomCreateView: FC = ({}) => {
 
   const { socket, roomSocket } = useSocket();
 
-  const [roomName, setRoomName] = useState("");
+  const [roomName, setRoomName] = useState('');
 
   useEffect(() => {
-    roomSocket?.on("successCreateRoom", console.log);
+    roomSocket?.on('successCreateRoom', console.log);
   }, [roomSocket]);
 
   const onClickCreateRoomButton = async () => {
@@ -30,7 +30,7 @@ const RoomCreateView: FC = ({}) => {
     const result = await createRoom({ roomName, userId });
 
     router.push({
-      pathname: "/game/bench",
+      pathname: '/game/bench',
       query: {
         userId,
         roomId: result.id,

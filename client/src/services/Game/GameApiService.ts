@@ -1,6 +1,6 @@
-import BaseApiService from "@services/BaseApiService";
-import GameDto from "./dto/GameDto";
-import { CreateGameBody } from "./RequestBody";
+import BaseApiService from '@services/BaseApiService';
+import GameDto from './dto/GameDto';
+import { CreateGameBody } from './RequestBody';
 
 class GameApiService extends BaseApiService {
   async getGame(gameId: number) {
@@ -8,7 +8,7 @@ class GameApiService extends BaseApiService {
   }
 
   async createGame(body: CreateGameBody) {
-    return await this.post<GameDto>("/", body);
+    return await this.post<GameDto>('/', body);
   }
 
   async deleteGame(gameId: number) {
@@ -16,4 +16,4 @@ class GameApiService extends BaseApiService {
   }
 }
 
-export default new GameApiService("games");
+export default new GameApiService('games');

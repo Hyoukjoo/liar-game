@@ -1,5 +1,4 @@
-import UserDto from "src/services/User/dto/UserDto";
-
+import UserDto from 'src/services/User/dto/UserDto';
 export default class UserModel {
   id: number;
   email: string;
@@ -8,11 +7,11 @@ export default class UserModel {
   updatedAt: Date;
 
   constructor(dto: UserDto) {
-    this.id = dto.id;
-    this.email = dto.email;
-    this.nickname = dto.nickname;
-    this.createdAt = new Date(dto.createdAt);
-    this.updatedAt = new Date(dto.updatedAt);
+    Object.assign(this, {
+      ...dto,
+      createdAt: new Date(dto.createdAt),
+      updatedAt: new Date(dto.updatedAt),
+    });
   }
 
   static createFromApi(dtos: UserDto[]) {

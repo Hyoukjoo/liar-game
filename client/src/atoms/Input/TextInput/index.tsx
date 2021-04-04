@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { BaseInputProps } from "../BaseInput";
+import { FC } from 'react';
+import { BaseInputProps } from '../BaseInput';
 
-import Style from "./style";
+import Style from './style';
 
 interface TextInputProps extends BaseInputProps {}
 

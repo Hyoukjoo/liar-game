@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 namespace BaseSelectStyle {
   export const Select = styled.select``;

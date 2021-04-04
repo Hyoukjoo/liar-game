@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 namespace BaseDivStyle {
   export const Div = styled.div``;

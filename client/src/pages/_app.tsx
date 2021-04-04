@@ -1,15 +1,15 @@
-import React, { FC, Fragment, useMemo } from "react";
-import { AppProps } from "next/app";
-import Head from "next/head";
-import { Global, Theme, ThemeProvider } from "@emotion/react";
+import React, { FC, Fragment, useMemo } from 'react';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import { Global, Theme, ThemeProvider } from '@emotion/react';
 
-import GlobalStyles from "@common/styles/globalStyle";
-import FontStyles from "@common/styles/fontStyle";
-import useClient from "@hooks/useClient";
+import GlobalStyles from '@common/styles/globalStyle';
+import FontStyles from '@common/styles/fontStyle';
+import useClient from '@hooks/useClient';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const { clientHeight } = useClient();
-  const vh100 = useMemo(() => (clientHeight ? clientHeight + "px" : "100vh"), [
+  const vh100 = useMemo(() => (clientHeight ? clientHeight + 'px' : '100vh'), [
     clientHeight,
   ]);
   const theme: Theme = {

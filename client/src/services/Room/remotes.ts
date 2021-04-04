@@ -1,5 +1,5 @@
-import { CreateRoomBody, JoinRoomBody } from "./RequestBodyType";
-import RoomApiService from "./RoomApiService";
+import { CreateRoomBody, JoinRoomBody } from './RequestBodyType';
+import RoomApiService from './RoomApiService';
 
 export const getRoom = async (roomId: string) => {
   try {

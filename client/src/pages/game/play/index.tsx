@@ -1,1 +1,1 @@
-export { default } from "@views/Game/Play";
+export { default } from '@views/Game/Play';

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 interface StyleProps {
   isSelected?: boolean;
@@ -13,7 +13,7 @@ namespace RoomItemStyle {
     width: calc(100% - 10px);
     height: 60px;
     border-bottom: 1px solid gray;
-    background-color: ${(props) => props.isSelected && "#bbdfc8"};
+    background-color: ${(props) => props.isSelected && '#bbdfc8'};
   `;
 
   export const LeftSide = styled.div`

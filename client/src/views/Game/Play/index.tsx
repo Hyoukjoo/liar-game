@@ -1,11 +1,11 @@
-import { FC, useEffect, useState } from "react";
-import { useRouter } from "next/dist/client/router";
+import { FC, useEffect, useState } from 'react';
+import { useRouter } from 'next/dist/client/router';
 
-import Style from "./style";
-import { NavLayout } from "@molecules/Layout";
-import { deleteGame, getGame } from "@services/Game/GameRemotes";
-import GameModel from "src/models/GameModel";
-import { Title } from "@atoms/Heading";
+import Style from './style';
+import { NavLayout } from '@molecules/Layout';
+import { deleteGame, getGame } from '@services/Game/GameRemotes';
+import GameModel from 'src/models/GameModel';
+import { Title } from '@atoms/Heading';
 
 const PlayView: FC = ({}) => {
   const router = useRouter();

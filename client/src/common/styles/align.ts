@@ -1,1 +1,1 @@
-type Align = "start" | "left" | "center" | "right" | "end";
+export type Align = 'start' | 'left' | 'center' | 'right' | 'end';

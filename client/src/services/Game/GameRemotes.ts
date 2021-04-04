@@ -1,5 +1,5 @@
-import GameApiService from "./GameApiService";
-import { CreateGameBody } from "./RequestBody";
+import GameApiService from './GameApiService';
+import { CreateGameBody } from './RequestBody';
 
 export const getGame = async (gameId: number) => {
   try {
