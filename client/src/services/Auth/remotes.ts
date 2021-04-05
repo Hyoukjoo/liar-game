@@ -1,7 +1,7 @@
 import AuthApiService from './AuthApiService';
 import { LoginBody, SignUpBody } from './RequestBody';
 
-export const signup = async (body: SignUpBody) => {
+export const signUp = async (body: SignUpBody) => {
   try {
     const result = await AuthApiService.signup(body);
 
@@ -43,7 +43,7 @@ export const getMyInfo = async () => {
 
     return result.data;
   } catch (e) {
-    console.error(e);
+    console.warn(e);
 
     return null;
   }
