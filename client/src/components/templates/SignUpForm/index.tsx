@@ -1,8 +1,6 @@
 import { FC, MouseEvent, useRef } from 'react';
-import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
-import { signup } from '@services/Auth/remotes';
 import { BaseButton } from '@atoms/Button';
 import {
   EmailInput,
@@ -10,15 +8,18 @@ import {
   NicknameInput,
   ValidateInputRef,
 } from '@organisms/SignUpForm';
+import { SignUpBody } from '@services/Auth/RequestBody';
 
-const SignUpForm: FC = () => {
-  const router = useRouter();
+interface SignUpFormProps {
+  signUp: (signUpBody: SignUpBody) => Promise<void>;
+}
 
+const SignUpForm: FC<SignUpFormProps> = ({ signUp }) => {
   const emailInputRef = useRef<ValidateInputRef>();
   const passwordInputRef = useRef<ValidateInputRef>();
   const nicknameInputRef = useRef<ValidateInputRef>();
 
-  const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
+  const onClickSignUpButton = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     const isEmailValidated = emailInputRef.current.validate();
@@ -28,17 +29,11 @@ const SignUpForm: FC = () => {
       isEmailValidated && isPasswordValidated && isNicknameValidated;
 
     if (isAllValidated) {
-      const result = await signup({
+      signUp({
         email: emailInputRef.current.value,
         password: passwordInputRef.current.value,
         nickname: nicknameInputRef.current.value,
       });
-
-      if (result !== null) {
-        router.replace({ pathname: '/' });
-      } else {
-        alert('error;;');
-      }
     }
   };
 
@@ -49,7 +44,7 @@ const SignUpForm: FC = () => {
         <PasswordInput ref={passwordInputRef} />
         <NicknameInput ref={nicknameInputRef} />
         <Style.ButtonWrapper>
-          <BaseButton type='submit' onClick={handleSubmit}>
+          <BaseButton type='submit' onClick={onClickSignUpButton}>
             SignUp
           </BaseButton>
         </Style.ButtonWrapper>

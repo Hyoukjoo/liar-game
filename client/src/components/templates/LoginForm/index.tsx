@@ -1,34 +1,27 @@
 import { FC, MouseEvent, useState } from 'react';
-import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
 import { BaseButton } from '@atoms/Button';
 import { BaseInput } from '@atoms/Input';
-import { login } from '@services/Auth/remotes';
+import { LoginBody } from '@services/Auth/RequestBody';
 
-const LoginForm: FC = () => {
-  const router = useRouter();
+interface LoginFormProps {
+  login: (loginBody: LoginBody) => Promise<void>;
+  moveToSignUpPage: () => void;
+}
 
+const LoginForm: FC<LoginFormProps> = ({ login, moveToSignUpPage }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const onClickLoginButton = async (e: MouseEvent<HTMLButtonElement>) => {
+  const onClickLoginButton = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    const result = await login({
-      email,
-      password,
-    });
-
-    if (result !== null) {
-      router.replace({ pathname: '/' });
-    } else {
-      alert('이메일 또는 패스워드가 다릅니다.');
-    }
+    login({ email, password });
   };
 
   const onClickSignUpButton = () => {
-    router.push({ pathname: '/account/signup' });
+    moveToSignUpPage();
   };
 
   return (
