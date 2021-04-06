@@ -6,7 +6,7 @@ import RoomItem from '../components/RoomItem';
 import { TextInput } from '@atoms/Input';
 import { IconButton, BaseButton } from '@atoms/Button';
 import { Refresh } from '@atoms/Icon';
-import { NavLayout } from '@molecules/Layout';
+import { HeaderLayout } from '@templates/Layout';
 import useSocket from '@hooks/useSocket';
 import RoomModel from '@models/RoomModel';
 import { getRoomList, findRooms, joinRoom } from '@services/Room/remotes';
@@ -79,7 +79,7 @@ const RoomJoinView: FC = ({}) => {
   );
 
   return (
-    <NavLayout title='방 참여하기'>
+    <HeaderLayout title='방 참여하기'>
       <Style.Container>
         <Style.SearchBox>
           <TextInput
@@ -97,7 +97,7 @@ const RoomJoinView: FC = ({}) => {
           <IconButton onClick={onClickInitButton} Svg={Refresh} />
         </Style.Bottom>
       </Style.Container>
-    </NavLayout>
+    </HeaderLayout>
   );
 };
 

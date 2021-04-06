@@ -4,7 +4,7 @@ import { useRouter } from 'next/dist/client/router';
 import Style from './style';
 import { BaseButton } from '@atoms/Button';
 import { Title } from '@atoms/Heading';
-import { NavLayout } from '@molecules/Layout';
+import { HeaderLayout } from '@templates/Layout';
 import EntryItem from '@views/Game/components/EntryItem';
 import UserModel from '@models/UserModel';
 import RoomModel from '@models/RoomModel';
@@ -68,7 +68,7 @@ const GameBenchView: FC = ({}) => {
   );
 
   return (
-    <NavLayout title='대기실' onClickBackIcon={onClickBackIcon}>
+    <HeaderLayout title='대기실' onClickBackIcon={onClickBackIcon}>
       <Style.Container>
         <Title>카테고리</Title>
         <select onChange={onChangeCategorySelect}>
@@ -84,7 +84,7 @@ const GameBenchView: FC = ({}) => {
           <BaseButton onClick={onClickStartButton}>시작하기</BaseButton>
         </Style.Bottom>
       </Style.Container>
-    </NavLayout>
+    </HeaderLayout>
   );
 };
 

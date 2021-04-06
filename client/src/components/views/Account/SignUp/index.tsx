@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
-import { NavLayout } from '@molecules/Layout';
+import { HeaderLayout } from '@templates/Layout';
 import SignUpForm from '@templates/SignUpForm';
 import { signUp as SignUpRequest } from '@services/Auth/remotes';
 import { SignUpBody } from '@services/Auth/RequestBody';
@@ -21,9 +21,9 @@ const SignUpView: FC = () => {
   };
 
   return (
-    <NavLayout>
+    <HeaderLayout title='회원가입'>
       <SignUpForm signUp={signUp} />
-    </NavLayout>
+    </HeaderLayout>
   );
 };
 

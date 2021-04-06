@@ -5,7 +5,7 @@ import Style from './style';
 import { Size } from '@common/enums/size';
 import { TextInput } from '@atoms/Input';
 import { BaseButton } from '@atoms/Button';
-import { NavLayout } from '@molecules/Layout';
+import { HeaderLayout } from '@templates/Layout';
 import useSocket from '@hooks/useSocket';
 import { createRoom } from '@services/Room/remotes';
 
@@ -38,12 +38,8 @@ const RoomCreateView: FC = ({}) => {
     });
   };
 
-  const onClickBackIcon = async () => {
-    router.back();
-  };
-
   return (
-    <NavLayout title='방 만들기' onClickBackIcon={onClickBackIcon}>
+    <HeaderLayout title='방 만들기'>
       <Style.Container>
         <Style.InputBox>
           <TextInput
@@ -58,7 +54,7 @@ const RoomCreateView: FC = ({}) => {
           </BaseButton>
         </Style.ButtonBox>
       </Style.Container>
-    </NavLayout>
+    </HeaderLayout>
   );
 };
 

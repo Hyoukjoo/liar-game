@@ -10,6 +10,7 @@ import { BaseDiv } from '@atoms/Div';
 
 namespace BaseLayoutStyles {
   export const Layout = styled(BaseDiv)`
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;

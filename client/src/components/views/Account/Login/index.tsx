@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { useRouter } from 'next/dist/client/router';
 
-import { NavLayout } from '@molecules/Layout';
+import { HeaderLayout } from '@templates/Layout';
 import LoginForm from '@templates/LoginForm';
 import useAccount from '@hooks/useAccount';
 import { login as loginRequest } from '@services/Auth/remotes';
@@ -34,9 +34,9 @@ const LoginView: FC = () => {
   };
 
   return (
-    <NavLayout>
+    <HeaderLayout title='로그인'>
       <LoginForm login={login} moveToSignUpPage={moveToSignUpPage} />
-    </NavLayout>
+    </HeaderLayout>
   );
 };
 

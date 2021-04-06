@@ -3,7 +3,7 @@ import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
 import { Title } from '@atoms/Heading';
-import { NavLayout } from '@molecules/Layout';
+import { HeaderLayout } from '@templates/Layout';
 import GameModel from '@models/GameModel';
 import { deleteGame, getGame } from '@services/Game/GameRemotes';
 
@@ -27,11 +27,11 @@ const PlayView: FC = ({}) => {
   };
 
   return (
-    <NavLayout title='플레이' onClickBackIcon={onClickBackIcon}>
+    <HeaderLayout title='플레이' onClickBackIcon={onClickBackIcon}>
       <Style.Container>
         <Title>{`카테고리: ${game.category.name}`}</Title>
       </Style.Container>
-    </NavLayout>
+    </HeaderLayout>
   );
 };
 
