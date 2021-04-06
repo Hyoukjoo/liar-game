@@ -4,8 +4,8 @@ import {
   useImperativeHandle,
 } from 'react';
 
-import { ValidateInputRef } from '..';
 import { passwordValidate, INVALIDATED_PASSWORD_MESSAGE } from './constant';
+import { ValidateInputRef } from '../constant';
 import useValidationForm from '@hooks/useValidateForm';
 import ValidateInput from '@molecules/Input/ValidateInput';
 

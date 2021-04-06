@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import styled from '@emotion/styled';
 
-import { EmailInput, NicknameInput, PasswordInput, ValidateInputRef } from '.';
+import { EmailInput, NicknameInput, PasswordInput } from '.';
+import { ValidateInputRef } from './constant';
 import { BaseButton } from '@atoms/Button';
 
 export default {

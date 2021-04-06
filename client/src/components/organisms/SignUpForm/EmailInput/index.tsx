@@ -5,7 +5,7 @@ import {
 } from 'react';
 
 import { emailValidate, INVALIDATED_EMAIL_MESSAGE } from './constant';
-import { ValidateInputRef } from '..';
+import { ValidateInputRef } from '../constant';
 import useValidationForm from '@hooks/useValidateForm';
 import ValidateInput from '@molecules/Input/ValidateInput';
 

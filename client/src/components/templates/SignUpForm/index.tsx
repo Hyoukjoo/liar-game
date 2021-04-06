@@ -6,8 +6,8 @@ import {
   EmailInput,
   PasswordInput,
   NicknameInput,
-  ValidateInputRef,
 } from '@organisms/SignUpForm';
+import { ValidateInputRef } from '@organisms/SignUpForm/constant';
 import { SignUpBody } from '@services/Auth/RequestBody';
 
 interface SignUpFormProps {

@@ -5,7 +5,7 @@ import {
 } from 'react';
 
 import { INVALIDATED_NICKNAME_MESSAGE, nicknameValidate } from './constant';
-import { ValidateInputRef } from '..';
+import { ValidateInputRef } from '../constant';
 import useValidationForm from '@hooks/useValidateForm';
 import ValidateInput from '@molecules/Input/ValidateInput';
 
