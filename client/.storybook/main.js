@@ -2,7 +2,11 @@ const path = require('path');
 
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
-  addons: ['@storybook/addon-knobs', '@storybook/addon-storysource'],
+  addons: [
+    '@storybook/addon-knobs',
+    '@storybook/addon-storysource',
+    '@storybook/addon-links',
+  ],
   webpackFinal: (config) => {
     config.module.rules.push({
       test: /\.(tx|tsx)$/,

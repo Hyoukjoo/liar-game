@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import { withLinks } from '@storybook/addon-links';
 import { Global, Theme, ThemeProvider } from '@emotion/react';
 import Style from '../src/common/styles/storybook';
 
@@ -28,6 +29,7 @@ const withThemeProvider = (story) => {
 };
 
 addDecorator(withKnobs);
+addDecorator(withLinks);
 addDecorator(withThemeProvider);
 
 addParameters({
