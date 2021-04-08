@@ -1,38 +1,23 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
-import { Size } from '@common/enums/size';
-import { TextInput } from '@atoms/Input';
-import { BaseButton } from '@atoms/Button';
 import { HeaderLayout } from '@templates/Layout';
-import useSocket from '@hooks/useSocket';
-import { createRoom } from '@services/Room/remotes';
+import CreateRoomForm from '@templates/CreateRoomForm';
+import useAccount from '@hooks/useAccount';
+import { createRoom as createRoomRequest } from '@services/Room/remotes';
 
-const RoomCreateView: FC = ({}) => {
+const RoomCreateView: FC = () => {
   const router = useRouter();
-  const userId = Number(router.query.userId);
+  const { account } = useAccount(true);
 
-  const { socket, roomSocket } = useSocket();
-
-  const [roomName, setRoomName] = useState('');
-
-  useEffect(() => {
-    roomSocket?.on('successCreateRoom', console.log);
-  }, [roomSocket]);
-
-  const onClickCreateRoomButton = async () => {
-    // roomSocket.emit("createRoom", {
-    //   userName: router.query.userId,
-    //   roomName,
-    // });
-
-    const result = await createRoom({ roomName, userId });
+  const createRoom = async (roomName: string) => {
+    const result = await createRoomRequest({ roomName, userId: account.id });
 
     router.push({
       pathname: '/game/bench',
       query: {
-        userId,
+        userId: account.id,
         roomId: result.id,
       },
     });
@@ -40,20 +25,7 @@ const RoomCreateView: FC = ({}) => {
 
   return (
     <HeaderLayout title='방 만들기'>
-      <Style.Container>
-        <Style.InputBox>
-          <TextInput
-            placeholder='방 이름'
-            maxLength={12}
-            onChange={(e) => setRoomName(e.target.value)}
-          />
-        </Style.InputBox>
-        <Style.ButtonBox>
-          <BaseButton size={Size.MEDIUM} onClick={onClickCreateRoomButton}>
-            만들기
-          </BaseButton>
-        </Style.ButtonBox>
-      </Style.Container>
+      <CreateRoomForm createRoom={createRoom} />
     </HeaderLayout>
   );
 };
