@@ -4,7 +4,7 @@ import { text } from '@storybook/addon-knobs';
 import HomeCard from '.';
 
 export default {
-  title: 'TEMPLATE/HOME CARD',
+  title: 'TEMPLATE/CARD',
 };
 
 export const Home_Card = () => {

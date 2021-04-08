@@ -1,10 +1,10 @@
-import { CSSProperties, FC } from 'react';
+import { CSSProperties } from 'react';
 
 import { BaseDiv, GlassDiv } from '.';
 import { white } from '@common/styles/color';
 
 export default {
-  title: 'Atom/Div',
+  title: 'ATOM/DIV',
 };
 
 const style: CSSProperties = {
@@ -16,10 +16,10 @@ const style: CSSProperties = {
   transform: 'translate(-50%, -50%)',
 };
 
-export const Base: FC = () => {
+export const Base_Div = () => {
   return <BaseDiv style={{ ...style, border: `1px solid ${white}` }}></BaseDiv>;
 };
 
-export const Glass: FC = () => {
+export const Glass_Div = () => {
   return <GlassDiv style={style}></GlassDiv>;
 };

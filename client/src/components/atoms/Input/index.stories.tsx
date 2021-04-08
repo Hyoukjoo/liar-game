@@ -1,15 +1,13 @@
-import { FC } from 'react';
-
 import { BaseInput, TextInput } from '.';
 
 export default {
-  title: 'Atom/Input',
+  title: 'ATOM/INPUT',
 };
 
-export const Base: FC = () => {
+export const Base_Input = () => {
   return <BaseInput />;
 };
 
-export const Text: FC = () => {
+export const Text_Input = () => {
   return <TextInput />;
 };

@@ -5,9 +5,9 @@ import { BaseButton } from '.';
 import { Size } from '@common/enums/size';
 import Story from '@common/styles/storybook';
 
-export default { title: 'Atom/Button' };
+export default { title: 'ATOM/BUTTON' };
 
-export const Base = () => {
+export const Base_Button = () => {
   return (
     <Story.GlassLayout>
       <BaseButton

@@ -1,10 +1,10 @@
 import BaseSelect from '.';
 
 export default {
-  title: 'Atom/Select',
+  title: 'ATOM/SELECT',
 };
 
-export const Base = () => {
+export const Base_Select = () => {
   return (
     <BaseSelect>
       <option>1</option>
