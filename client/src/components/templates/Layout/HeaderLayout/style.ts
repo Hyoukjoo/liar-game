@@ -6,7 +6,7 @@ namespace HeaderLayoutStyle {
   export const Layout = styled(BaseLayout)``;
 
   export const Body = styled.div`
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 30px;
