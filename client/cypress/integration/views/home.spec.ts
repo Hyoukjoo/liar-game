@@ -33,6 +33,10 @@ context('Home View Test', () => {
       });
     });
 
+    it('should show nickname', () => {
+      cy.get('p').should('have.text', 'test');
+    });
+
     it('should has three buttons in login', () => {
       cy.get('button').should('have.length', 3);
     });
