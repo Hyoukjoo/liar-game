@@ -2,16 +2,51 @@ import { FC } from 'react';
 import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
-import LoginForm from '@templates/LoginForm';
+import HomeCard from '@templates/HomeCard';
+import useAccount from '@hooks/useAccount';
 
-const Home: FC = ({}) => {
+const HomeView: FC = ({}) => {
   const router = useRouter();
+  const { account, logout, isLogin, isInit } = useAccount();
+
+  const onClickLogoutButton = () => {
+    logout();
+  };
+
+  const onClickLoginButton = () => {
+    router.push({
+      pathname: '/account/login',
+      query: { exPath: router.pathname },
+    });
+  };
+
+  const onClickCreateRoomButton = () => {
+    router.push({
+      pathname: '/room/create',
+    });
+  };
+
+  const onClickJoinRoomButton = () => {
+    router.push({
+      pathname: '/room/join',
+    });
+  };
 
   return (
     <Style.HomeLayout>
-      <LoginForm />
+      <Style.GameName>Liar Game</Style.GameName>
+      {isInit && (
+        <HomeCard
+          nickname={account?.nickname}
+          onClickCreateRoomButton={onClickCreateRoomButton}
+          onClickJoinRoomButton={onClickJoinRoomButton}
+          isLogin={isLogin}
+          onClickLoginButton={onClickLoginButton}
+          onClickLogoutButton={onClickLogoutButton}
+        />
+      )}
     </Style.HomeLayout>
   );
 };
 
-export default Home;
+export default HomeView;

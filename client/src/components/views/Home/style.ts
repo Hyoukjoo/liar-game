@@ -1,31 +1,21 @@
 import styled from '@emotion/styled';
 
-import { GlassDiv } from '@atoms/Div';
-import { BaseLayout } from '@molecules/Layout';
+import { getBlackOpacity, getWhiteOpacity } from '@common/styles/opacity';
+import { H1 } from '@atoms/Heading/Normal';
+import { BaseLayout } from '@templates/Layout';
 
-namespace HomeStyles {
+namespace HomeViewStyle {
   export const HomeLayout = styled(BaseLayout)`
-    display: grid;
-    align-content: center;
+    padding: 0 30px;
   `;
 
-  export const Container = styled(GlassDiv)`
-    padding: 0 20px;
-    width: 100%;
-    height: 70vh;
-    border-radius: 20px;
-  `;
-
-  export const Title = styled.h1`
-    text-align: center;
-    margin-bottom: 10px;
-  `;
-
-  export const InputBox = styled.div`
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    margin-bottom: 30px;
+  export const GameName = styled(H1)`
+    font-family: JellyFruit;
+    font-size: 4rem;
+    letter-spacing: 0.3rem;
+    color: ${getWhiteOpacity(90)};
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 10px ${getBlackOpacity(40)};
   `;
 
   export const ButtonBox = styled.div`
@@ -35,4 +25,4 @@ namespace HomeStyles {
   `;
 }
 
-export default HomeStyles;
+export default HomeViewStyle;
