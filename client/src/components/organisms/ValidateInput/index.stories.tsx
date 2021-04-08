@@ -1,12 +1,12 @@
 import { useRef } from 'react';
 import styled from '@emotion/styled';
 
-import { EmailInput, NicknameInput, PasswordInput } from '.';
+import { EmailInput, NicknameInput, PasswordInput, RoomNameInput } from '.';
 import { ValidateInputRef } from './constant';
 import { BaseButton } from '@atoms/Button';
 
 export default {
-  title: 'ORGANISM/SIGNUP FORM',
+  title: 'ORGANISM/VALIDATE INPUT',
 };
 
 const Container = styled.div`
@@ -59,6 +59,21 @@ export const Nickname_Input = () => {
   return (
     <Container>
       <NicknameInput ref={inputRef} />
+      <BaseButton onClick={onClickValidateButton}>Validate</BaseButton>
+    </Container>
+  );
+};
+
+export const Room_Name_Input = () => {
+  const inputRef = useRef<ValidateInputRef>(null);
+
+  const onClickValidateButton = () => {
+    inputRef.current.validate();
+  };
+
+  return (
+    <Container>
+      <RoomNameInput ref={inputRef} />
       <BaseButton onClick={onClickValidateButton}>Validate</BaseButton>
     </Container>
   );
