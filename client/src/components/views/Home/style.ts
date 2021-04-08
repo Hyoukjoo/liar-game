@@ -12,7 +12,7 @@ namespace HomeViewStyle {
   export const GameName = styled(H1)`
     font-family: JellyFruit;
     font-size: 4rem;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.1rem;
     color: ${getWhiteOpacity(90)};
     margin-bottom: 20px;
     text-shadow: 4px 4px 10px ${getBlackOpacity(40)};
