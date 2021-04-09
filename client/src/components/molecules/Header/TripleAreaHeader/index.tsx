@@ -1,12 +1,11 @@
-import { ComponentType, DetailedHTMLProps, FC, HTMLAttributes } from 'react';
+import { ComponentType, FC, HTMLAttributes } from 'react';
 
 import Style from './style';
 import { IconButton } from '@atoms/Button';
 import { SvgProps } from '@atoms/Icon/Component';
 import { Title } from '@atoms/Heading';
 
-export interface TripleAreaHeaderProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
+export interface TripleAreaHeaderProps extends HTMLAttributes<HTMLElement> {
   title: string;
   leftSideIcon?: ComponentType<SvgProps>;
   onClickLeftSideIcon?: () => void;
