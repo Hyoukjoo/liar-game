@@ -23,7 +23,10 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name='title' content='liar game' />
         <meta name='description' content='game with friends' />
 
-        <meta name='viewport' content='initial-scale=1, viewport-fit=cover' />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, viewport-fit=cover'
+        />
 
         <meta name='og:type' content='website' />
         <meta name='og:url' content='http://localhost:3000' />
