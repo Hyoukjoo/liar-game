@@ -1,15 +1,13 @@
 import { useMemo } from 'react';
-import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { withLinks } from '@storybook/addon-links';
+import { addDecorator, addParameters } from '@storybook/react';
 import { Global, Theme, ThemeProvider } from '@emotion/react';
-import Style from '../src/common/styles/storybook';
 
+import Style from '../src/common/styles/storybook';
 import FontStyle from '../src/common/styles/fontStyle';
 import GlobalStyle from '../src/common/styles/globalStyle';
 import useClient from '../src/hooks/useClient';
 
-const withThemeProvider = (story) => {
+const withThemeDecorator = (Story) => {
   const { clientHeight } = useClient();
   const vh100 = useMemo(() => (clientHeight ? clientHeight + 'px' : '100vh'), [
     clientHeight,
@@ -23,14 +21,14 @@ const withThemeProvider = (story) => {
     <ThemeProvider theme={theme}>
       <Global styles={GlobalStyle} />
       <Global styles={FontStyle} />
-      <Style.GlassLayout>{story()}</Style.GlassLayout>
+      <Style.GlassLayout>
+        <Story />
+      </Style.GlassLayout>
     </ThemeProvider>
   );
 };
 
-addDecorator(withKnobs);
-addDecorator(withLinks);
-addDecorator(withThemeProvider);
+addDecorator(withThemeDecorator);
 
 addParameters({
   options: {
@@ -39,6 +37,5 @@ addParameters({
         ? 0
         : a[1].id.localeCompare(b[1].id, { numeric: true }),
   },
+  layout: 'fullscreen',
 });
-
-configure(require.context('../src', true, /\.stories\.tsx?$/), module);
