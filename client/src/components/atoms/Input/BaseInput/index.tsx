@@ -2,6 +2,7 @@ import { ChangeEvent, FC, InputHTMLAttributes } from 'react';
 
 import Style from './style';
 import { Size } from '@common/enums/size';
+import { Align } from '@common/styles/align';
 
 export interface BaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
   inputSize?: Size;
