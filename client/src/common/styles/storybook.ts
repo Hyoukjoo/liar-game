@@ -7,7 +7,7 @@ namespace CommonStoryBookStyle {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    width: calc(100vw - 20px);
+    width: 100vw;
     height: 100vh;
     background-color: ${white};
     background-image: radial-gradient(at top left, ${background1}, transparent),
