@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { text } from '@storybook/addon-knobs';
 
-import ValidateInput from '.';
+import ValidateInput from './ValidateInput';
 import useValidationForm from '@hooks/useValidateForm';
 import { BaseButton } from '@atoms/Button';
 
 export default {
-  title: 'MOLUCULE/INPUT',
+  title: 'MOLECULE/INPUT',
 };
 
 const Container = styled.div`

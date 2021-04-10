@@ -3,7 +3,7 @@ import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
 import { HeaderLayout } from '@templates/Layout';
-import CreateRoomForm from '@templates/CreateRoomForm';
+import CreateRoomForm from '@templates/Form/CreateRoomForm';
 import useAccount from '@hooks/useAccount';
 import { createRoom as createRoomRequest } from '@services/Room/remotes';
 

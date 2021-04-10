@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import { useRouter } from 'next/dist/client/router';
 
 import { HeaderLayout } from '@templates/Layout';
-import LoginForm from '@templates/LoginForm';
+import LoginForm from '@templates/Form/LoginForm';
 import useAccount from '@hooks/useAccount';
 import { login as loginRequest } from '@services/Auth/remotes';
 import { LoginBody } from '@services/Auth/RequestBody';

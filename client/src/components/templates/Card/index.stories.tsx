@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { text } from '@storybook/addon-knobs';
 
-import HomeCard from '.';
+import { HomeCard } from '.';
 
 export default {
   title: 'TEMPLATE/CARD',

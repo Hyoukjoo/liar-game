@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
-import HomeCard from '@templates/HomeCard';
+import { HomeCard } from '@templates/Card';
 import useAccount from '@hooks/useAccount';
 
 const HomeView: FC = ({}) => {

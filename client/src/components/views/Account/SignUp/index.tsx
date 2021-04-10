@@ -3,7 +3,7 @@ import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
 import { HeaderLayout } from '@templates/Layout';
-import SignUpForm from '@templates/SignUpForm';
+import SignUpForm from '@templates/Form/SignUpForm';
 import { signUp as SignUpRequest } from '@services/Auth/remotes';
 import { SignUpBody } from '@services/Auth/RequestBody';
 
