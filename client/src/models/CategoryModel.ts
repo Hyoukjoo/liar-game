@@ -11,4 +11,8 @@ export default class CategoryModel {
     this.name = dto.name;
     this.keywords = dto.keywords && KeywordModel.createFromApi(dto.keywords);
   }
+
+  static createFromApi(dtos: CategoryDto[]) {
+    return dtos.map((dto) => new CategoryModel(dto));
+  }
 }
