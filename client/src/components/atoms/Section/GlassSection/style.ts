@@ -6,6 +6,7 @@ import BaseSection from '../BaseSection';
 namespace GlassSectionStyle {
   export const Section = styled(BaseSection)`
     ${getGlassMorphismStyle};
+    backdrop-filter: none;
   `;
 }
 
