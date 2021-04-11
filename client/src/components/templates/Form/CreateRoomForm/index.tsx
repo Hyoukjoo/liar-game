@@ -2,7 +2,7 @@ import { FC, useRef, MouseEvent } from 'react';
 
 import Style from './style';
 import { BaseButton } from '@atoms/Button';
-import GlassSection from '@atoms/Section/GlassSection';
+import { GlassSection } from '@atoms/Section';
 import { RoomNameInput } from '@organisms/ValidateInput';
 import { ValidateInputRef } from '@organisms/ValidateInput/constant';
 

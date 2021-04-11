@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import GlassSection from '@atoms/Section/GlassSection';
+import { GlassSection } from '@atoms/Section';
 
 namespace SignUpFormStyle {
   export const Section = styled(GlassSection)``;

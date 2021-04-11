@@ -1,7 +1,7 @@
 import { FC, Fragment } from 'react';
 
 import Style from './style';
-import GlassSection from '@atoms/Section/GlassSection';
+import { GlassSection } from '@atoms/Section';
 import { BaseButton } from '@atoms/Button';
 
 export interface HomeCardProps {
