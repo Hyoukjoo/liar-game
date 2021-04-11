@@ -34,6 +34,7 @@ module.exports = {
       '@organisms': path.resolve('src/components/organisms/'),
       '@templates': path.resolve('src/components/templates/'),
       '@views': path.resolve('src/components/views/'),
+      '@models': path.resolve('src/models/'),
       '@utils': path.resolve('src/utils/'),
       '@hooks': path.resolve('src/hooks/'),
       '@emotion/styled': path.resolve('node_modules/@emotion/styled'),
