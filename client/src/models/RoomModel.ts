@@ -1,4 +1,5 @@
 import RoomDto from '@services/Room/dto/RoomDto';
+import CategoryModel from './CategoryModel';
 import UserModel from './UserModel';
 
 export default class RoomModel {
@@ -6,6 +7,7 @@ export default class RoomModel {
   name: string;
   owner: UserModel;
   member: UserModel[];
+  categories: CategoryModel[];
   createdAt: Date;
   updatedAt: Date;
 
@@ -14,6 +16,8 @@ export default class RoomModel {
     this.name = dto.name;
     this.owner = dto.owner && new UserModel(dto.owner);
     this.member = dto.member && UserModel.createFromApi(dto.member);
+    this.categories =
+      dto.categories && CategoryModel.createFromApi(dto.categories);
     this.createdAt = new Date(dto.createdAt);
     this.updatedAt = new Date(dto.updatedAt);
   }
