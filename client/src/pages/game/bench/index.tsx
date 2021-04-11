@@ -1,1 +1,1 @@
-export { default } from '@views/Game/Bench';
+export { default } from '@views/Room/Bench';
