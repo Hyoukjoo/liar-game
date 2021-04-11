@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { Like } from 'typeorm';
+import Category from '../models/Category';
 import Room from '../models/Room';
 import User from '../models/User';
 
@@ -24,7 +25,9 @@ export default class RoomController {
         relations: ['owner', 'member'],
       });
 
-      res.json(result);
+      const categories = await Category.find();
+
+      res.json({ ...result, categories });
     } catch (e) {
       console.error(e);
 
@@ -47,6 +50,8 @@ export default class RoomController {
         .whereInIds(userId)
         .set({ room: result })
         .execute();
+
+      delete result.owner.password;
 
       res.json(result);
     } catch (e) {
