@@ -42,12 +42,10 @@ export default class GameController {
 
       const room = await Room.findOne(roomId);
       const category = await Category.findOne(categoryId);
-
       const game = await Game.createModel({ room, category });
-
       const result = await game.save();
 
-      res.status(200).json({ ...result });
+      res.status(200).json(result);
     } catch (e) {
       console.error(e);
 
