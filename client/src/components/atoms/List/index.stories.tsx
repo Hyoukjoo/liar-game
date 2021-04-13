@@ -3,7 +3,7 @@ import { BaseItem, GlassItem } from '@atoms/Item';
 import GlassSection from '@atoms/Section/GlassSection';
 
 export default {
-  title: 'ATOM/LIST&ITEM',
+  title: 'ATOM/LIST & ITEM',
 };
 
 export const Base_List = () => {
