@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import Style from './style';
-import EntryItem from '../EntryItem';
+import EntryItem from './EntryItem';
 import UserModel from '@models/UserModel';
 
 export interface EntryListProps {

@@ -1,2 +1,2 @@
 export { default as EntryList } from './EntryList';
-export { default as EntryItem } from './EntryItem';
+export { default as EntryItem } from './EntryList/EntryItem';
