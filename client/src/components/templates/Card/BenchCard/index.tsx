@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 
 import Style from './style';
-import { BaseButton } from '@atoms/Button';
+import { GlassButton } from '@atoms/Button';
 import { GlassSection } from '@atoms/Section';
 import { CategorySelect } from '@organisms/Select';
 import { EntryList } from '@organisms/List';
@@ -42,7 +42,7 @@ const BenchCard: FC<BenchCardProps> = ({ categories, entries, startGame }) => {
         <EntryList entries={entries} />
       </Style.DetailBox>
       <Style.ButtonWrapper>
-        <BaseButton onClick={onClickStartButton}>START</BaseButton>
+        <GlassButton onClick={onClickStartButton}>START</GlassButton>
       </Style.ButtonWrapper>
     </GlassSection>
   );

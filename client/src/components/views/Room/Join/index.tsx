@@ -3,9 +3,10 @@ import { useRouter } from 'next/dist/client/router';
 
 import Style from './style';
 import RoomItem from '../components/RoomItem';
-import { TextInput } from '@atoms/Input';
-import { IconButton, BaseButton } from '@atoms/Button';
+import { GlassInput } from '@atoms/Input';
+import { GlassButton } from '@atoms/Button';
 import { Refresh } from '@atoms/Icon';
+import { IconButton } from '@molecules/Button';
 import { HeaderLayout } from '@templates/Layout';
 import useSocket from '@hooks/useSocket';
 import RoomModel from '@models/RoomModel';
@@ -82,18 +83,18 @@ const RoomJoinView: FC = ({}) => {
     <HeaderLayout title='방 참여하기'>
       <Style.Container>
         <Style.SearchBox>
-          <TextInput
+          <GlassInput
             placeholder='방 찾기'
             value={searchValue}
             onChange={(e) => {
               setSearchValue(e.target.value);
             }}
           />
-          <BaseButton onClick={onClickSearchButton}>검색</BaseButton>
+          <GlassButton onClick={onClickSearchButton}>검색</GlassButton>
         </Style.SearchBox>
         <RoomItems />
         <Style.Bottom>
-          <BaseButton onClick={onClickJoinButton}>참여하기</BaseButton>
+          <GlassButton onClick={onClickJoinButton}>참여하기</GlassButton>
           <IconButton onClick={onClickInitButton} Svg={Refresh} />
         </Style.Bottom>
       </Style.Container>

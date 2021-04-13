@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { BaseInput } from '@atoms/Input';
+import { GlassInput } from '@atoms/Input';
 import { getHexOpacity } from '@common/styles/opacity';
 import { red } from '@common/styles/color';
 
@@ -13,7 +13,7 @@ namespace ValidateInputStyle {
     margin-bottom: 20px;
   `;
 
-  export const ValidationInput = styled(BaseInput)<StyleProps>`
+  export const ValidationInput = styled(GlassInput)<StyleProps>`
     ${(props) =>
       !props.validity && `border: 1px solid ${getHexOpacity(red, 20)}`};
   `;

@@ -1,7 +1,7 @@
 import { FC, MouseEvent, useRef } from 'react';
 
 import Style from './style';
-import { BaseButton } from '@atoms/Button';
+import { GlassButton } from '@atoms/Button';
 import {
   EmailInput,
   PasswordInput,
@@ -44,9 +44,9 @@ const SignUpForm: FC<SignUpFormProps> = ({ signUp }) => {
         <PasswordInput ref={passwordInputRef} />
         <NicknameInput ref={nicknameInputRef} />
         <Style.ButtonWrapper>
-          <BaseButton type='submit' onClick={onClickSignUpButton}>
+          <GlassButton type='submit' onClick={onClickSignUpButton}>
             SignUp
-          </BaseButton>
+          </GlassButton>
         </Style.ButtonWrapper>
       </Style.Form>
     </Style.Section>

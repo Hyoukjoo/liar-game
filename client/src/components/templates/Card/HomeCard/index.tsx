@@ -2,7 +2,7 @@ import { FC, Fragment } from 'react';
 
 import Style from './style';
 import { GlassSection } from '@atoms/Section';
-import { BaseButton } from '@atoms/Button';
+import { GlassButton } from '@atoms/Button';
 
 export interface HomeCardProps {
   nickname: string;
@@ -27,14 +27,14 @@ const HomeCard: FC<HomeCardProps> = ({
       <Style.ButtonBox>
         {isLogin ? (
           <Fragment>
-            <BaseButton onClick={onClickCreateRoomButton}>
+            <GlassButton onClick={onClickCreateRoomButton}>
               Create Room
-            </BaseButton>
-            <BaseButton onClick={onClickJoinRoomButton}>Join Room</BaseButton>
-            <BaseButton onClick={onClickLogoutButton}>Logout</BaseButton>
+            </GlassButton>
+            <GlassButton onClick={onClickJoinRoomButton}>Join Room</GlassButton>
+            <GlassButton onClick={onClickLogoutButton}>Logout</GlassButton>
           </Fragment>
         ) : (
-          <BaseButton onClick={onClickLoginButton}>Login</BaseButton>
+          <GlassButton onClick={onClickLoginButton}>Login</GlassButton>
         )}
       </Style.ButtonBox>
     </GlassSection>

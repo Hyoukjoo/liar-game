@@ -1,7 +1,7 @@
 import { FC, useRef, MouseEvent } from 'react';
 
 import Style from './style';
-import { BaseButton } from '@atoms/Button';
+import { GlassButton } from '@atoms/Button';
 import { GlassSection } from '@atoms/Section';
 import { RoomNameInput } from '@organisms/ValidateInput';
 import { ValidateInputRef } from '@organisms/ValidateInput/constant';
@@ -26,9 +26,9 @@ const CreateRoomForm: FC<CreateRoomFormProps> = ({ createRoom }) => {
       <Style.Form>
         <RoomNameInput ref={inputRef} />
         <Style.ButtonWrapper>
-          <BaseButton type='submit' onClick={onClickCreateButton}>
+          <GlassButton type='submit' onClick={onClickCreateButton}>
             Create
-          </BaseButton>
+          </GlassButton>
         </Style.ButtonWrapper>
       </Style.Form>
     </GlassSection>

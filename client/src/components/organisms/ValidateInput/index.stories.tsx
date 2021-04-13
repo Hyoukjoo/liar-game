@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 import { EmailInput, NicknameInput, PasswordInput, RoomNameInput } from '.';
 import { ValidateInputRef } from './constant';
-import { BaseButton } from '@atoms/Button';
+import { GlassButton } from '@atoms/Button';
 
 export default {
   title: 'ORGANISM/VALIDATE INPUT',
@@ -29,7 +29,7 @@ export const Email_Input = () => {
   return (
     <Container>
       <EmailInput ref={inputRef} />
-      <BaseButton onClick={onClickValidateButton}>Validate</BaseButton>
+      <GlassButton onClick={onClickValidateButton}>Validate</GlassButton>
     </Container>
   );
 };
@@ -44,7 +44,7 @@ export const Password_Input = () => {
   return (
     <Container>
       <PasswordInput ref={inputRef} />
-      <BaseButton onClick={onClickValidateButton}>Validate</BaseButton>
+      <GlassButton onClick={onClickValidateButton}>Validate</GlassButton>
     </Container>
   );
 };
@@ -59,7 +59,7 @@ export const Nickname_Input = () => {
   return (
     <Container>
       <NicknameInput ref={inputRef} />
-      <BaseButton onClick={onClickValidateButton}>Validate</BaseButton>
+      <GlassButton onClick={onClickValidateButton}>Validate</GlassButton>
     </Container>
   );
 };
@@ -74,7 +74,7 @@ export const Room_Name_Input = () => {
   return (
     <Container>
       <RoomNameInput ref={inputRef} />
-      <BaseButton onClick={onClickValidateButton}>Validate</BaseButton>
+      <GlassButton onClick={onClickValidateButton}>Validate</GlassButton>
     </Container>
   );
 };

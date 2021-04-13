@@ -1,8 +1,8 @@
 import { FC, MouseEvent, useState } from 'react';
 
 import Style from './style';
-import { BaseButton } from '@atoms/Button';
-import { BaseInput } from '@atoms/Input';
+import { GlassButton } from '@atoms/Button';
+import { GlassInput } from '@atoms/Input';
 import { LoginBody } from '@services/Auth/RequestBody';
 
 interface LoginFormProps {
@@ -27,14 +27,14 @@ const LoginForm: FC<LoginFormProps> = ({ login, moveToSignUpPage }) => {
   return (
     <Style.Section>
       <Style.Form>
-        <BaseInput
+        <GlassInput
           type='email'
           name='email'
           placeholder='email'
           value={email}
           onChangeValue={setEmail}
         />
-        <BaseInput
+        <GlassInput
           type='password'
           name='password'
           placeholder='password'
@@ -42,10 +42,10 @@ const LoginForm: FC<LoginFormProps> = ({ login, moveToSignUpPage }) => {
           onChangeValue={setPassword}
         />
         <Style.ButtonWrapper>
-          <BaseButton type='submit' onClick={onClickLoginButton}>
+          <GlassButton type='submit' onClick={onClickLoginButton}>
             Login
-          </BaseButton>
-          <BaseButton onClick={onClickSignUpButton}>SignUp</BaseButton>
+          </GlassButton>
+          <GlassButton onClick={onClickSignUpButton}>SignUp</GlassButton>
         </Style.ButtonWrapper>
       </Style.Form>
     </Style.Section>
