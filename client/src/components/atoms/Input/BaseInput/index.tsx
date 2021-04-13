@@ -14,18 +14,17 @@ const BaseInput: FC<BaseInputProps> = ({
   inputSize = Size.MEDIUM,
   textAlign,
   onChangeValue,
-  onChange,
   ...props
 }) => {
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     onChangeValue?.(e.target.value);
-    onChange?.(e);
+    props.onChange?.(e);
   };
 
   return (
     <Style.Input
-      textAlign={textAlign}
       inputSize={inputSize}
+      textAlign={textAlign}
       onChange={onChangeInput}
       {...props}
     />
