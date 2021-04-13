@@ -16,6 +16,6 @@ router.get('/find/:roomName', contoller.findRoom);
 
 router.post('/join', contoller.joinRoom);
 
-router.put('/leave/:userId', contoller.leaveRoom);
+router.put('/leave', contoller.leaveRoom);
 
 export default router;
