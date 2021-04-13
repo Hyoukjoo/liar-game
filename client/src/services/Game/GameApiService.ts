@@ -3,16 +3,16 @@ import GameDto from './dto/GameDto';
 import { CreateGameBody } from './RequestBody';
 
 class GameApiService extends BaseApiService {
-  async getGame(gameId: number) {
-    return await this.get<GameDto>(`/${gameId}`);
+  getGame(gameId: number) {
+    return this.get<GameDto>(`/${gameId}`);
   }
 
-  async createGame(body: CreateGameBody) {
-    return await this.post<GameDto>('/', body);
+  createGame(body: CreateGameBody) {
+    return this.post<GameDto>('/', body);
   }
 
-  async deleteGame(gameId: number) {
-    return await this.delete<boolean>(`/${gameId}`);
+  deleteGame(gameId: number) {
+    return this.delete<boolean>(`/${gameId}`);
   }
 }
 

@@ -16,27 +16,27 @@ export default class BaseApiService {
     });
   }
 
-  protected async get<DTO = any>(path: string, config?: AxiosRequestConfig) {
-    return await this.client.get<DTO>(path, config);
+  protected get<DTO = any>(path: string, config?: AxiosRequestConfig) {
+    return this.client.get<DTO>(path, config);
   }
 
-  protected async post<DTO = any>(
+  protected post<DTO = any>(
     path: string,
     data?: unknown,
     config?: AxiosRequestConfig
   ) {
-    return await this.client.post<DTO>(path, data, config);
+    return this.client.post<DTO>(path, data, config);
   }
 
-  protected async put<DTO = any>(
+  protected put<DTO = any>(
     path: string,
     data?: unknown,
     config?: AxiosRequestConfig
   ) {
-    return await this.client.put<DTO>(path, data, config);
+    return this.client.put<DTO>(path, data, config);
   }
 
-  protected async delete<DTO = any>(path: string, config?: AxiosRequestConfig) {
-    return await this.client.delete<DTO>(path, config);
+  protected delete<DTO = any>(path: string, config?: AxiosRequestConfig) {
+    return this.client.delete<DTO>(path, config);
   }
 }
