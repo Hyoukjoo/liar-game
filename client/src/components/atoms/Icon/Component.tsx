@@ -1,4 +1,4 @@
-import { ComponentType, FC } from "react";
+import { ComponentType, FC } from 'react';
 
 export interface SvgProps {
   className?: string;
@@ -7,16 +7,18 @@ export interface SvgProps {
   height?: string;
 }
 
-interface Props extends SvgProps {
-  Svg: ComponentType<SvgProps>;
+export type SvgComponent = ComponentType<SvgProps>;
+
+interface IconProps extends SvgProps {
+  Svg: SvgComponent;
   color?: string;
 }
 
-const Icon: FC<Props> = ({
+const Icon: FC<IconProps> = ({
   Svg,
   className,
-  width = "24px",
-  height = "24px",
+  width = '24px',
+  height = '24px',
   color,
   fill,
 }) => {
