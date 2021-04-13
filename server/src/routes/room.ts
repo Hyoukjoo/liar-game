@@ -12,7 +12,7 @@ router.get('/:roomId', contoller.getRoom);
 
 router.delete('/:roomId', contoller.deleteRoom);
 
-router.get('/find/:roomName', contoller.deleteRoom);
+router.get('/find/:roomName', contoller.findRoom);
 
 router.post('/join', contoller.joinRoom);
 
