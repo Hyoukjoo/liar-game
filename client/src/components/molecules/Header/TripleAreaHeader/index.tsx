@@ -1,7 +1,7 @@
 import { ComponentType, FC, HTMLAttributes } from 'react';
 
 import Style from './style';
-import { IconButton } from '@atoms/Button';
+import { IconButton } from '@molecules/Button';
 import { SvgProps } from '@atoms/Icon/Component';
 import { Title } from '@atoms/Heading';
 
