@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import Style from './style';
 import EntryItem from './EntryItem';
+import { GlassList } from '@atoms/List';
 import UserModel from '@models/UserModel';
 
 export interface EntryListProps {
@@ -10,11 +10,11 @@ export interface EntryListProps {
 
 const EntryList: FC<EntryListProps> = ({ entries }) => {
   return (
-    <Style.EntryList>
+    <GlassList>
       {entries.map((entry) => (
         <EntryItem key={entry.id} nickname={entry.nickname} />
       ))}
-    </Style.EntryList>
+    </GlassList>
   );
 };
 
