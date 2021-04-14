@@ -1,6 +1,9 @@
-import { ENTRIES } from '@common/mocks/user';
 import { number } from '@storybook/addon-knobs';
-import { EntryList } from '.';
+import { action } from '@storybook/addon-actions';
+
+import { EntryList, RoomList } from '.';
+import { ROOMS } from '@common/mocks/room';
+import { ENTRIES } from '@common/mocks/user';
 
 export default {
   title: 'ORGANISM/LIST & ITEM',
@@ -17,4 +20,17 @@ export const Entry_List = () => {
   );
 
   return <EntryList entries={entries} />;
+};
+
+export const Room_List = () => {
+  const rooms = ROOMS.slice(
+    0,
+    number('room count', ROOMS.length, {
+      min: 1,
+      max: ROOMS.length,
+      step: 1,
+    })
+  );
+
+  return <RoomList rooms={rooms} onClickJoinButton={action('join button')} />;
 };

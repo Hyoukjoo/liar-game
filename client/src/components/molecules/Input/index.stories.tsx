@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
-import { text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
-import ValidateInput from './ValidateInput';
+import { SearchInput, ValidateInput } from '.';
+import { GlassButton } from '@atoms/Button';
 import useValidationForm from '@hooks/useValidateForm';
-import { BaseButton } from '@atoms/Button';
 
 export default {
   title: 'MOLECULE/INPUT',
@@ -43,7 +44,16 @@ export const Validate_Input = () => {
         validity={validity}
         message={text('실패 메세지', '영문, 숫자 8자 이상 15자 이하')}
       />
-      <BaseButton onClick={onClickValidateButton}>Validate</BaseButton>
+      <GlassButton onClick={onClickValidateButton}>Validate</GlassButton>
     </Container>
+  );
+};
+
+export const Search_Input = () => {
+  return (
+    <SearchInput
+      onSearch={action('click search button')}
+      isResetAfterSearch={boolean('clear after search', false)}
+    />
   );
 };
