@@ -20,7 +20,10 @@ const JoinCard: FC<JoinCardProps> = ({
 }) => {
   return (
     <GlassSection>
-      <Style.RoomSearchInput onSearch={searchRoom} />
+      <Style.RoomSearchInput
+        placeholder='방 이름으로 검색'
+        onSearch={searchRoom}
+      />
       <RoomList rooms={rooms} onClickJoinButton={joinRoom} />
       <Style.RefreshButton Svg={Refresh} onClick={refreshRoomList} />
     </GlassSection>
