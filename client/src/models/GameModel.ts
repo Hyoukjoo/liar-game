@@ -9,7 +9,7 @@ export default class GameModel {
   room: RoomModel;
   category: CategoryModel;
   liar: UserModel;
-  targetKeyword: KeywordModel;
+  keyword: KeywordModel;
   createdAt: Date;
   updatedAt: Date;
 
@@ -18,7 +18,7 @@ export default class GameModel {
     this.room = dto.room && new RoomModel(dto.room);
     this.category = dto.category && new CategoryModel(dto.category);
     this.liar = new UserModel(dto.liar);
-    this.targetKeyword = new KeywordModel(dto.targetKeyword);
+    this.keyword = new KeywordModel(dto.keyword);
     this.createdAt = new Date(dto.createdAt);
     this.updatedAt = new Date(dto.updatedAt);
   }

@@ -8,7 +8,7 @@ export default interface GameDto {
   room: RoomDto;
   category: CategoryDto;
   liar: UserDto;
-  targetKeyword: KeywordDto;
+  keyword: KeywordDto;
   createdAt: string;
   updatedAt: string;
 }

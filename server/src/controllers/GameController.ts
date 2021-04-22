@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+
 import Category from '../models/Category';
 import Game from '../models/Game';
 import Room from '../models/Room';
@@ -26,9 +27,9 @@ export default class GameController {
         Math.random() * result.category.keywords.length
       );
 
-      const targetKeyword = result.category.keywords[targetKeywordIndex];
+      const keyword = result.category.keywords[targetKeywordIndex];
 
-      res.status(200).json({ ...result, liar, targetKeyword });
+      res.status(200).json({ ...result, liar, keyword });
     } catch (e) {
       console.error(e);
 
