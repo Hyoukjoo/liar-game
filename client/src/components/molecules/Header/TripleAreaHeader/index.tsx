@@ -25,7 +25,11 @@ const TripleAreaHeader: FC<TripleAreaHeaderProps> = ({
     <Style.Header {...props}>
       <Style.Area>
         {leftSideIcon !== null && (
-          <IconButton Svg={leftSideIcon} onClick={onClickLeftSideIcon} />
+          <IconButton
+            Svg={leftSideIcon}
+            onClick={onClickLeftSideIcon}
+            isTransparent
+          />
         )}
       </Style.Area>
       <Style.Area>
@@ -33,7 +37,11 @@ const TripleAreaHeader: FC<TripleAreaHeaderProps> = ({
       </Style.Area>
       <Style.Area>
         {rightSideIcon !== null && (
-          <IconButton Svg={rightSideIcon} onClick={onClickRightSideIcon} />
+          <IconButton
+            Svg={rightSideIcon}
+            onClick={onClickRightSideIcon}
+            isTransparent
+          />
         )}
       </Style.Area>
     </Style.Header>
