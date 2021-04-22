@@ -13,7 +13,11 @@ const RoomList: FC<RoomListProps> = ({ rooms, onClickJoinButton }) => {
   return (
     <Style.List>
       {rooms.map((room) => (
-        <RoomItem room={room} onClickJoinButton={onClickJoinButton} />
+        <RoomItem
+          key={`room-item-${room.id}`}
+          room={room}
+          onClickJoinButton={onClickJoinButton}
+        />
       ))}
     </Style.List>
   );
