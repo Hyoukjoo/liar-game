@@ -4,11 +4,13 @@ import Style from './style';
 import SvgSearch from '@atoms/Icon/Search';
 
 export interface SearchInputProps {
+  placeholder?: string;
   onSearch: (value: string) => void;
   isResetAfterSearch?: boolean;
 }
 
 const SearchInput: FC<SearchInputProps> = ({
+  placeholder,
   onSearch,
   isResetAfterSearch,
   ...props
@@ -34,6 +36,7 @@ const SearchInput: FC<SearchInputProps> = ({
   return (
     <Style.Container {...props}>
       <Style.Input
+        placeholder={placeholder}
         value={value}
         onChangeValue={setValue}
         onKeyUp={onKeyUpSearchInput}
