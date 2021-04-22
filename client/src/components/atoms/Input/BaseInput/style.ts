@@ -4,6 +4,7 @@ import { InputSize } from '../_constant/InputSize';
 import { white } from '@common/styles/color';
 import { Size } from '@common/enums/size';
 import { Align } from '@common/styles/align';
+import { getWhiteOpacity } from '@common/styles/opacity';
 
 interface BaseInputStyleProps {
   inputSize?: Size;
@@ -24,6 +25,10 @@ namespace BaseInputStyle {
     border: none;
     outline: none;
     border-radius: 100px;
+
+    &::placeholder {
+      color: ${getWhiteOpacity(50)};
+    }
   `;
 }
 
